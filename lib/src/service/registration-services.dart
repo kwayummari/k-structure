@@ -11,22 +11,20 @@ class registrationService {
   static String baseUrl = dotenv.env['API_SERVER'] ?? 'http://noapi';
   Api api = Api();
 
-  Future<void> registration(BuildContext context, String email, String password,
+  Future<void> registration(BuildContext context, String password,
       String rpassword, String fullname, String phone) async {
     if (password.toString() == rpassword.toString()) {
       Map<String, dynamic> data = {
-        'email': email.toString(),
         'fullname': fullname.toString(),
         'password': password.toString(),
         'phone': phone.toString(),
       };
-      final response = await api.post(context, 'auth/registration.php', data);
+      final response = await api.post(context, 'register_user', data);
       if (response.toString() == 'success') {
         final prefs = await SharedPreferences.getInstance();
-        await prefs.setString('email', email);
-        await prefs.setString('role', '0');
+        await prefs.setString('id', response.body.id);
         Fluttertoast.showToast(
-          msg: response,
+          msg: response.message,
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.CENTER,
           timeInSecForIosWeb: 1,
@@ -34,7 +32,7 @@ class registrationService {
           textColor: Colors.white,
           fontSize: 15.0,
         );
-        Navigator.pushNamed(context, RouteNames.login);
+        // Navigator.pushNamed(context, RouteNames.login);
       } else {
         AppSnackbar(
           isError: true,

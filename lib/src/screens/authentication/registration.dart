@@ -150,7 +150,6 @@ class _RegistrationState extends State<Registration> {
                         }
                         registrationService().registration(
                             context,
-                            email.text,
                             password.text,
                             rpassword.text,
                             fullname.text,
