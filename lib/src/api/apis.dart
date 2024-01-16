@@ -58,7 +58,7 @@ class Api {
           )
           .timeout(Duration(seconds: 10));
       _handleError(response);
-      return json.decode(response.body);
+      return response;
     } catch (e) {
       AppSnackbar(
         isError: true,

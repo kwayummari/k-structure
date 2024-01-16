@@ -49,10 +49,10 @@ class _LoginState extends State<Login> {
                 textfieldcontroller: email,
                 ispassword: false,
                 fillcolor: AppConst.white,
-                label: 'Phone Number',
+                label: 'Email',
                 obscure: false,
                 icon: Icon(
-                  Icons.person,
+                  Icons.mail,
                   color: AppConst.black,
                 ),
                 isemail: true,
@@ -101,12 +101,8 @@ class _LoginState extends State<Login> {
                       width: 350,
                       height: 55,
                       child: AppButton(
-                        onPress: () => Navigator.pushNamedAndRemoveUntil(
-                            context,
-                            RouteNames.bottomNavigationBar,
-                            (_) => false),
-                        // loginService()
-                        //     .login(context, email.text, password.text),
+                        onPress: () => loginService()
+                            .login(context, email.text, password.text),
                         label: 'LOGIN',
                         borderRadius: 5,
                         textColor: AppConst.white,

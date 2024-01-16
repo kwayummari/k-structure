@@ -19,29 +19,26 @@ class loginService {
       'email': email.toString(),
       'password': password.toString(),
     };
-    final response = await api.post(context, 'auth/login.php', data);
-    // "0"
+    final response = await api.post(context, 'login', data);
 
-    if (response != 'wrong') {
-      Provider.of<MyProvider>(context, listen: false)
-          .updateLoging(!myProvider.myLoging);
-      List<String> splitResponse = response.split("-");
-      String id = splitResponse[0]; // "1"
-      String role = splitResponse[1];
-      if (role == '0') {
+    if (response.statusCode == '200') {
+      AppSnackbar(
+        isError: false,
+        response: response.body.message,
+      ).show(context);
         final prefs = await SharedPreferences.getInstance();
         await prefs.setString('email', email);
-        await prefs.setString('id', id.toString());
-        await prefs.setString('role', role.toString());
-        Navigator.pushNamedAndRemoveUntil(
-            context, RouteNames.bottomNavigationBar, (_) => false);
-      }
+        await prefs.setString('id', response.body.id.toString());
+        // Navigator.pushNamedAndRemoveUntil(
+        //     context, RouteNames.bottomNavigationBar, (_) => false);
     } else {
+      Navigator.pushNamedAndRemoveUntil(
+          context, RouteNames.bottomNavigationBar, (_) => false);
       Provider.of<MyProvider>(context, listen: false)
           .updateLoging(!myProvider.myLoging);
       AppSnackbar(
         isError: true,
-        response: 'Wrong username or password',
+        response: response.body.message,
       ).show(context);
     }
   }
