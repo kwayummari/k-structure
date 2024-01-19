@@ -1,6 +1,5 @@
 import 'package:kstructure/src/api/apis.dart';
 import 'package:kstructure/src/utils/app_const.dart';
-import 'package:kstructure/src/utils/routes/route-names.dart';
 import 'package:kstructure/src/widgets/app_snackbar.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -15,12 +14,12 @@ class registrationService {
       String rpassword, String fullname, String phone) async {
     if (password.toString() == rpassword.toString()) {
       Map<String, dynamic> data = {
-        'fullname': fullname.toString(),
+        'full_name': fullname.toString(),
+        'phone_number': phone.toString(),
         'password': password.toString(),
-        'phone': phone.toString(),
       };
       final response = await api.post(context, 'register_user', data);
-      if (response.toString() == 'success') {
+      if (response.statusCode == 200) {
         final prefs = await SharedPreferences.getInstance();
         await prefs.setString('id', response.body.id);
         Fluttertoast.showToast(
@@ -36,7 +35,7 @@ class registrationService {
       } else {
         AppSnackbar(
           isError: true,
-          response: response.toString(),
+          response: response.body.toString(),
         ).show(context);
       }
     } else {

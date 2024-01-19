@@ -50,10 +50,12 @@ class Api {
     // if (!(await hasInternetConnection())) {
     //   throw Exception("No internet connection");
     // } else {
+    print(data);
+    print("$baseUrl$endPoint");
     try {
       final response = await http
           .post(
-            Uri.parse('$baseUrl/$endPoint'),
+            Uri.parse('$baseUrl$endPoint'),
             body: data,
           )
           .timeout(Duration(seconds: 10));
