@@ -19,7 +19,7 @@ class Api {
 
   // Throw an error if the response is not successful
   void _handleError(http.Response response) {
-    if (response.statusCode != 200) {
+    if (response.statusCode != 200 && response.statusCode != 400) {
       throw Exception("Failed to fetch data");
     }
   }
@@ -50,7 +50,6 @@ class Api {
     // if (!(await hasInternetConnection())) {
     //   throw Exception("No internet connection");
     // } else {
-    print(data);
     print("$baseUrl$endPoint");
     try {
       final response = await http
@@ -66,7 +65,6 @@ class Api {
         isError: true,
         response: e.toString(),
       ).show(context);
-      throw Exception(e.toString());
     }
     // }
   }

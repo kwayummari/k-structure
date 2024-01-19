@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:kstructure/src/api/apis.dart';
 import 'package:kstructure/src/utils/app_const.dart';
+import 'package:kstructure/src/utils/routes/route-names.dart';
 import 'package:kstructure/src/widgets/app_snackbar.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:fluttertoast/fluttertoast.dart';
@@ -19,11 +22,12 @@ class registrationService {
         'password': password.toString(),
       };
       final response = await api.post(context, 'register_user', data);
+      final newResponse = jsonDecode(response.body);
       if (response.statusCode == 200) {
         final prefs = await SharedPreferences.getInstance();
-        await prefs.setString('id', response.body.id);
+        await prefs.setString('id', newResponse['userId'].toString());
         Fluttertoast.showToast(
-          msg: response.message,
+          msg: newResponse['message'],
           toastLength: Toast.LENGTH_SHORT,
           gravity: ToastGravity.CENTER,
           timeInSecForIosWeb: 1,
@@ -31,11 +35,11 @@ class registrationService {
           textColor: Colors.white,
           fontSize: 15.0,
         );
-        // Navigator.pushNamed(context, RouteNames.login);
+        Navigator.pushNamed(context, RouteNames.login);
       } else {
         AppSnackbar(
           isError: true,
-          response: response.body.toString(),
+          response: newResponse['message'],
         ).show(context);
       }
     } else {
