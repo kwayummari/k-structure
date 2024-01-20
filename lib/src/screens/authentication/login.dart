@@ -49,13 +49,14 @@ class _LoginState extends State<Login> {
                 textfieldcontroller: email,
                 ispassword: false,
                 fillcolor: AppConst.white,
-                label: 'Email',
+                label: 'Phone',
                 obscure: false,
                 icon: Icon(
-                  Icons.mail,
+                  Icons.phone_android,
                   color: AppConst.black,
                 ),
-                isemail: true,
+                isemail: false,
+                isPhone: true,
               ),
               AppInputText(
                 textsColor: AppConst.black,
