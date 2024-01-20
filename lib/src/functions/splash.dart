@@ -16,12 +16,10 @@ class SplashFunction {
     if (intro == null) {
       Navigator.pushNamed(context, RouteNames.intro);
     } else {
-      if (email == null && role == null) {
+      if (id.toString().isEmpty) {
         Navigator.pushNamed(context, RouteNames.login);
-      } else if (email.toString() != null && role.toString() == '0') {
-        Navigator.pushNamed(context, RouteNames.bottomNavigationBar);
       } else {
-        Navigator.pushNamed(context, RouteNames.login);
+        Navigator.pushNamed(context, RouteNames.bottomNavigationBar);
       }
     }
   }
@@ -29,11 +27,9 @@ class SplashFunction {
   Future<void> getValidationData() async {
     final SharedPreferences sharedPreferences =
         await SharedPreferences.getInstance();
-    var e = sharedPreferences.getString('email');
     var i = sharedPreferences.getString('id');
     var r = sharedPreferences.getString('role');
     var intr = sharedPreferences.getString('intro');
-    email = email;
     id = i;
     role = r;
     intro = intr;
