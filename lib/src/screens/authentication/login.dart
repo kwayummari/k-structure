@@ -19,8 +19,7 @@ class Login extends StatefulWidget {
 }
 
 class _LoginState extends State<Login> {
-  final loginService _apiService = loginService();
-  TextEditingController email = TextEditingController();
+  TextEditingController phone_number = TextEditingController();
   TextEditingController password = TextEditingController();
   bool marked = false;
   bool dont_show_password = true;
@@ -46,7 +45,7 @@ class _LoginState extends State<Login> {
               ),
               AppInputText(
                 textsColor: AppConst.black,
-                textfieldcontroller: email,
+                textfieldcontroller: phone_number,
                 ispassword: false,
                 fillcolor: AppConst.white,
                 label: 'Phone',
@@ -103,7 +102,7 @@ class _LoginState extends State<Login> {
                       height: 55,
                       child: AppButton(
                         onPress: () => loginService()
-                            .login(context, email.text, password.text),
+                            .login(context, phone_number.text, password.text),
                         label: 'LOGIN',
                         borderRadius: 5,
                         textColor: AppConst.white,
