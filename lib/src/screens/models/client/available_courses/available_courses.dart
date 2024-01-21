@@ -1,7 +1,9 @@
 import 'dart:io';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:kstructure/src/service/categories.dart';
+import 'package:kstructure/src/utils/animations/shimmers/available_courses.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/widgets/app_button.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
@@ -34,7 +36,13 @@ class _availableCoursesState extends State<availableCourses> {
 
   @override
   Widget build(BuildContext context) {
-    return  data == null ? availableCourses() : CarouselSlider(
+    return data == null
+        ? availableCoursesShimmerLoad(
+            width: 400,
+            height: 200,
+            borderRadius: 15,
+          )
+        : CarouselSlider(
             options: CarouselOptions(
               height: Platform.isIOS ? 200 : 170,
               aspectRatio: 16 / 9,
@@ -60,7 +68,7 @@ class _availableCoursesState extends State<availableCourses> {
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
                           image: DecorationImage(
                             image: NetworkImage(
-                                'http://localhost/k-structure-images/${data!['categories'][i]['image']}'),
+                                '${dotenv.env['IMAGE_SERVER']}${data!['categories'][i]['image']}'),
                             fit: BoxFit.cover,
                           ),
                         ),
