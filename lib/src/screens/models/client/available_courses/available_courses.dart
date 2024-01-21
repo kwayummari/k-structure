@@ -16,13 +16,19 @@ class availableCourses extends StatefulWidget {
 class _availableCoursesState extends State<availableCourses> {
   List datas = ['Engineering', 'Engineering'];
   List photos = ['assets/4.jpg', 'assets/5.jpg'];
-  var data;
+  Map<String, dynamic> data = {};
+
+  void fetchData() async {
+    categoriesServices CategoriesServices = categoriesServices();
+    Map<String, dynamic> decodedResponse =
+        await CategoriesServices.getCategories(context);
+    print(decodedResponse);
+  }
 
   @override
   void initState() {
     super.initState();
-    data = categoriesServices().getCategories(context);
-    print(data);
+    fetchData();
   }
 
   @override
