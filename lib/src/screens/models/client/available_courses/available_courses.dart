@@ -16,7 +16,7 @@ class availableCourses extends StatefulWidget {
 class _availableCoursesState extends State<availableCourses> {
   List datas = ['Engineering', 'Engineering'];
   List photos = ['assets/4.jpg', 'assets/5.jpg'];
-  Map<String, dynamic> data = {};
+  Map<String, dynamic>? data;
 
   void fetchData() async {
     categoriesServices CategoriesServices = categoriesServices();
@@ -32,7 +32,8 @@ class _availableCoursesState extends State<availableCourses> {
 
   @override
   Widget build(BuildContext context) {
-    return CarouselSlider(
+    return data == null
+        ?Center(child: CircularProgressIndicator()) : CarouselSlider(
       options: CarouselOptions(
         height: Platform.isIOS ? 200 : 170,
         aspectRatio: 16 / 9,
@@ -48,7 +49,7 @@ class _availableCoursesState extends State<availableCourses> {
         scrollDirection: Axis.horizontal,
       ),
       items: <Widget>[
-        for (var i = 0; i < data['categories'].length; i++)
+        for (var i = 0; i < data!['categories'].length; i++)
           GestureDetector(
             onTap: () => null,
             child: Stack(
@@ -57,7 +58,7 @@ class _availableCoursesState extends State<availableCourses> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(10.0)),
                     image: DecorationImage(
-                      image: NetworkImage('localhost/k-structure-image/${data['categories'][i]['image']}'),
+                      image: NetworkImage('localhost/k-structure-image/${data!['categories'][i]['image']}'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -73,7 +74,7 @@ class _availableCoursesState extends State<availableCourses> {
                     top: 20,
                     left: 20,
                     child: AppText(
-                      txt: data['categories'][i]['title'],
+                      txt: data!['categories'][i]['title'],
                       color: Colors.white,
                       weight: FontWeight.w700,
                       size: 25,
