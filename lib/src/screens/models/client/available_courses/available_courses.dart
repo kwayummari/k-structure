@@ -46,6 +46,7 @@ class _availableCoursesState extends State<availableCourses> {
               children: [
                 Container(
                   decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
                     image: DecorationImage(
                       image: AssetImage(photos[i]),
                       fit: BoxFit.cover,
@@ -53,8 +54,11 @@ class _availableCoursesState extends State<availableCourses> {
                   ),
                 ),
                 Container(
-                  color:
-                      const Color.fromARGB(255, 33, 58, 243).withOpacity(0.5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                    color:
+                        const Color.fromARGB(255, 33, 58, 243).withOpacity(0.5),
+                  ),
                 ),
                 Positioned(
                     top: 20,
