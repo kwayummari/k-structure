@@ -40,60 +40,44 @@ class _availableCoursesState extends State<availableCourses> {
       ),
       items: <Widget>[
         for (var i = 0; i < photos.length; i++)
-          InkWell(
-            onTap: () {},
-            child: Container(
-              child: Column(
-                children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: Container(
-                      width: 150,
-                      height: 50,
-                      decoration: BoxDecoration(
-                        color: Color.fromRGBO(51, 43, 144, 0.698),
-                        borderRadius: BorderRadius.all(Radius.circular(5.0)),
-                        border: Border.all(color: Colors.black),
-                      ),
-                      child: AppText(
-                        txt: datas[i].toString(),
-                        color: Colors.white,
-                        size: 25,
-                      ),
+          GestureDetector(
+            onTap: () => null,
+            child: Stack(
+              children: [
+                Container(
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(photos[i]),
+                      fit: BoxFit.cover,
                     ),
                   ),
-                  SizedBox(
-                    height: 55,
-                  ),
-                  Align(
-                    alignment: Alignment.bottomLeft,
-                    child: Container(
-                      width: 100,
-                      child: AppButton(
-                          onPress: () => null,
-                          label: 'View',
-                          borderRadius: 5,
-                          textColor: AppConst.black,
-                          bcolor: AppConst.white),
-                    ),
-                  ),
-                ],
-              ),
-              width: MediaQuery.of(context).size.width,
-              margin: EdgeInsets.symmetric(horizontal: 5.0),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                border: Border.all(color: Colors.black),
-                image: DecorationImage(
-                  image: AssetImage(photos[i]),
-                  fit: BoxFit.fill,
-                  colorFilter: ColorFilter.mode(
-                      Color.fromARGB(131, 9, 17, 107).withOpacity(0.4),
-                      BlendMode.srcOver),
                 ),
-              ),
+                Container(
+                  color:
+                      const Color.fromARGB(255, 33, 58, 243).withOpacity(0.5),
+                ),
+                Positioned(
+                    top: 20,
+                    left: 20,
+                    child: AppText(
+                      txt: datas[i].toString(),
+                      color: Colors.white,
+                      weight: FontWeight.w700,
+                      size: 25,
+                    )),
+                Positioned(
+                  bottom: 10,
+                  left: 20,
+                  child: AppButton(
+                      onPress: () => null,
+                      label: 'View',
+                      borderRadius: 5,
+                      textColor: AppConst.black,
+                      bcolor: AppConst.white),
+                )
+              ],
             ),
-          ),
+          )
       ],
     );
   }
