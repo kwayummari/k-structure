@@ -34,7 +34,7 @@ class _availableCoursesState extends State<availableCourses> {
 
   @override
   Widget build(BuildContext context) {
-    return  CarouselSlider(
+    return  data == null ? availableCourses() : CarouselSlider(
             options: CarouselOptions(
               height: Platform.isIOS ? 200 : 170,
               aspectRatio: 16 / 9,
