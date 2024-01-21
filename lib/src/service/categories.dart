@@ -8,6 +8,7 @@ class categoriesServices {
 
   Future getCategories(BuildContext context) async {
     final response = await api.get(context, 'categories');
-    return jsonDecode(response.body);
+    final decodedResponse = jsonDecode(response.body);
+    return decodedResponse;
   }
 }
