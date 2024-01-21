@@ -7,9 +7,7 @@ class categoriesServices {
   Api api = Api();
 
   Future getCategories(BuildContext context) async {
-    Map<String, dynamic> data = {
-    };
-    final response = await api.post(context, 'categories', data);
+    final response = await api.get(context, 'categories');
     return jsonDecode(response.body);
   }
 }

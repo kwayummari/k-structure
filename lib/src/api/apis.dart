@@ -34,7 +34,7 @@ class Api {
           .get(Uri.parse("$baseUrl/$endPoint"))
           .timeout(Duration(seconds: 5));
       _handleError(response);
-      return json.decode(response.body);
+      return response;
     } catch (e) {
       AppSnackbar(
         isError: true,
