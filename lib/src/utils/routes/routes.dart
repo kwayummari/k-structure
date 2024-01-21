@@ -8,7 +8,6 @@ import 'package:kstructure/src/screens/models/client/navigation/navigation.dart'
 import 'package:kstructure/src/screens/models/client/pricing/pricing.dart';
 import 'package:kstructure/src/screens/models/client/profile/profile.dart';
 import 'package:kstructure/src/screens/models/client/rides/rides.dart';
-import 'package:kstructure/src/screens/models/client/searchBus/searchBus.dart';
 import 'package:kstructure/src/utils/routes/route-names.dart';
 import 'package:flutter/material.dart';
 import 'package:kstructure/src/screens/authentication/login.dart';
