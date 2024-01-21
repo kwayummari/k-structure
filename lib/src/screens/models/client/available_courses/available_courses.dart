@@ -20,9 +20,8 @@ class _availableCoursesState extends State<availableCourses> {
 
   void fetchData() async {
     categoriesServices CategoriesServices = categoriesServices();
-    Map<String, dynamic> decodedResponse =
+     data =
         await CategoriesServices.getCategories(context);
-    print(decodedResponse);
   }
 
   @override
@@ -49,7 +48,7 @@ class _availableCoursesState extends State<availableCourses> {
         scrollDirection: Axis.horizontal,
       ),
       items: <Widget>[
-        for (var i = 0; i < photos.length; i++)
+        for (var i = 0; i < data['categories'].length; i++)
           GestureDetector(
             onTap: () => null,
             child: Stack(
@@ -58,7 +57,7 @@ class _availableCoursesState extends State<availableCourses> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(10.0)),
                     image: DecorationImage(
-                      image: AssetImage(photos[i]),
+                      image: NetworkImage('localhost/k-structure-image/${data['categories'][i]['image']}'),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -74,7 +73,7 @@ class _availableCoursesState extends State<availableCourses> {
                     top: 20,
                     left: 20,
                     child: AppText(
-                      txt: datas[i].toString(),
+                      txt: data['categories'][i]['title'],
                       color: Colors.white,
                       weight: FontWeight.w700,
                       size: 25,
