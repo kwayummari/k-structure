@@ -34,6 +34,7 @@ class _dashboardState extends State<dashboard> {
         backgroundAuth: false,
         padding: EdgeInsets.all(0),
         appBar: AppBar(
+          backgroundColor: AppConst.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(20),
