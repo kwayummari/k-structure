@@ -35,6 +35,7 @@ class _dashboardState extends State<dashboard> {
         backgroundAuth: false,
         padding: EdgeInsets.all(0),
         appBar: AppBar(
+          automaticallyImplyLeading: false,
           backgroundColor: AppConst.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
@@ -44,8 +45,7 @@ class _dashboardState extends State<dashboard> {
           ),
           toolbarHeight: 200,
           flexibleSpace: Padding(
-            padding: EdgeInsets.only(
-                top: 30), // Adjust the top padding value as desired
+            padding: EdgeInsets.only(top: 30),
             child: Column(
               children: [
                 SizedBox(
@@ -87,17 +87,20 @@ class _dashboardState extends State<dashboard> {
                 SizedBox(
                   height: 20,
                 ),
-                AppInputText(
-                  textfieldcontroller: search,
-                  ispassword: false,
-                  isemail: false,
-                  fillcolor: AppConst.white,
-                  label: 'Search Categories',
-                  textsColor: AppConst.black,
-                  obscure: false,
-                  icon: Icon(
-                    Icons.search,
-                    color: AppConst.black,
+                Padding(
+                  padding: const EdgeInsets.only(left: 30, right: 30),
+                  child: AppInputText(
+                    textfieldcontroller: search,
+                    ispassword: false,
+                    isemail: false,
+                    fillcolor: AppConst.white,
+                    label: 'Search Categories',
+                    textsColor: AppConst.black,
+                    obscure: false,
+                    icon: Icon(
+                      Icons.search,
+                      color: AppConst.black,
+                    ),
                   ),
                 ),
               ],
@@ -116,14 +119,14 @@ class _dashboardState extends State<dashboard> {
                   AppText(
                     txt: 'Available Categories',
                     size: 15,
-                    color: AppConst.white,
+                    color: AppConst.black,
                     weight: FontWeight.w700,
                   ),
                   Spacer(),
                   AppText(
                     txt: 'View All',
                     size: 15,
-                    color: AppConst.white,
+                    color: AppConst.black,
                     weight: FontWeight.w700,
                   ),
                   SizedBox(
@@ -131,7 +134,7 @@ class _dashboardState extends State<dashboard> {
                   ),
                   Icon(
                     Icons.arrow_forward_ios,
-                    color: AppConst.white,
+                    color: AppConst.black,
                   )
                 ],
               ),
