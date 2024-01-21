@@ -45,7 +45,7 @@ class _dashboardState extends State<dashboard> {
           toolbarHeight: 200,
           flexibleSpace: Padding(
             padding: EdgeInsets.only(
-                top: 20), // Adjust the top padding value as desired
+                top: 30), // Adjust the top padding value as desired
             child: Column(
               children: [
                 SizedBox(
@@ -54,13 +54,13 @@ class _dashboardState extends State<dashboard> {
                 Row(
                   children: [
                     SizedBox(
-                      width: 20,
+                      width: 30,
                     ),
                     CircleAvatar(
                       backgroundColor: AppConst.white,
                       child: Icon(
                         Icons.person,
-                        size: 40,
+                        size: 30,
                         color: AppConst.primary,
                       ),
                     ),
@@ -69,7 +69,7 @@ class _dashboardState extends State<dashboard> {
                     ),
                     AppText(
                       txt: 'Welcome \nKwayu',
-                      size: 20,
+                      size: 18,
                       weight: FontWeight.w600,
                       color: AppConst.white,
                     ),
@@ -80,7 +80,7 @@ class _dashboardState extends State<dashboard> {
                       size: 40,
                     ),
                     SizedBox(
-                      width: 20,
+                      width: 30,
                     ),
                   ],
                 ),
