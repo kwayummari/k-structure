@@ -8,7 +8,6 @@ import 'package:kstructure/src/widgets/app_base_screen.dart';
 import 'package:kstructure/src/widgets/app_input_text.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
 
 class dashboard extends StatefulWidget {
