@@ -17,6 +17,7 @@ class AppInputText extends StatelessWidget {
   final bool? enabled;
   final bool? isPhone;
   final double? circle;
+  final labelWeight;
   AppInputText(
       {Key? key,
       this.isPhone,
@@ -32,7 +33,8 @@ class AppInputText extends StatelessWidget {
       required this.obscure,
       this.validate,
       this.enabled,
-      this.circle})
+      this.circle,
+      this.labelWeight})
       : super(key: key);
 
   @override
@@ -55,6 +57,7 @@ class AppInputText extends StatelessWidget {
             child: AppText(
               txt: label,
               size: 15,
+              weight: labelWeight ?? FontWeight.w700,
               color: textsColor ?? AppConst.white,
             ),
           ),
