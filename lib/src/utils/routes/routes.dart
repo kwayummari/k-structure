@@ -26,15 +26,6 @@ final Map<String, WidgetBuilder> routes = {
   RouteNames.bottomNavigationBar: (context) => bottomNavigation(),
   RouteNames.navigation: (context) => navigation(),
   RouteNames.pricing: (context) => pricing(),
-  RouteNames.searchBus: (context) {
-    final Map<String, dynamic>? args =
-        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-    return searchBus(
-      destination: args?['destination'],
-      dire: args?['dire'],
-      route: args?['route'],
-    );
-  },
   // RouteNames.buses: (context) {
   //   final Map<String, dynamic>? args =
   //       ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
