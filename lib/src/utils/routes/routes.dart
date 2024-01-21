@@ -5,9 +5,7 @@ import 'package:kstructure/src/screens/models/client/bottomNavigationBar/bottomN
 // import 'package:kstructure/src/screens/models/client/buses/exploreBuses.dart';
 import 'package:kstructure/src/screens/models/client/dashboard/dashboard.dart';
 import 'package:kstructure/src/screens/models/client/navigation/navigation.dart';
-import 'package:kstructure/src/screens/models/client/pricing/pricing.dart';
 import 'package:kstructure/src/screens/models/client/profile/profile.dart';
-import 'package:kstructure/src/screens/models/client/rides/rides.dart';
 import 'package:kstructure/src/utils/routes/route-names.dart';
 import 'package:flutter/material.dart';
 import 'package:kstructure/src/screens/authentication/login.dart';
@@ -20,11 +18,9 @@ final Map<String, WidgetBuilder> routes = {
   RouteNames.splash: (context) => Splash(),
   RouteNames.intro: (context) => IntroScreen(),
   RouteNames.dashboard: (context) => dashboard(),
-  RouteNames.rides: (context) => rides(),
   RouteNames.profile: (context) => profile(),
   RouteNames.bottomNavigationBar: (context) => bottomNavigation(),
   RouteNames.navigation: (context) => navigation(),
-  RouteNames.pricing: (context) => pricing(),
   // RouteNames.buses: (context) {
   //   final Map<String, dynamic>? args =
   //       ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
