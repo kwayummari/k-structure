@@ -6,9 +6,8 @@ class categories {
 
   Future getBusHours(BuildContext context, String id) async {
     Map<String, dynamic> data = {
-      'id': id.toString(),
     };
-    final response = await api.post(context, 'bus/get_bushours.php', data);
+    final response = await api.post(context, 'categories', data);
     return response;
   }
 }

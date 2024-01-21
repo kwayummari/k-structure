@@ -19,6 +19,7 @@ class _availableCoursesState extends State<availableCourses> {
   @override
   void initState() {
     super.initState();
+    
   }
 
   @override
