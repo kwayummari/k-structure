@@ -1,7 +1,7 @@
 import 'package:kstructure/src/api/apis.dart';
 import 'package:flutter/material.dart';
 
-class busHoursService {
+class categories {
   Api api = Api();
 
   Future getBusHours(BuildContext context, String id) async {
