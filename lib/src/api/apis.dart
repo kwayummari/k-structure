@@ -31,7 +31,7 @@ class Api {
     // }
     try {
       final response = await http
-          .get(Uri.parse("$baseUrl/$endPoint"))
+          .get(Uri.parse("$baseUrl$endPoint"))
           .timeout(Duration(seconds: 5));
       _handleError(response);
       return response;
