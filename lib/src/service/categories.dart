@@ -1,13 +1,15 @@
+import 'dart:convert';
+
 import 'package:kstructure/src/api/apis.dart';
 import 'package:flutter/material.dart';
 
-class categories {
+class categoriesServices {
   Api api = Api();
 
-  Future getBusHours(BuildContext context, String id) async {
+  Future getCategories(BuildContext context) async {
     Map<String, dynamic> data = {
     };
     final response = await api.post(context, 'categories', data);
-    return response;
+    return jsonDecode(response.body);
   }
 }

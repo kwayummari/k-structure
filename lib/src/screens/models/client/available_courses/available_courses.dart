@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:kstructure/src/service/categories.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/widgets/app_button.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
@@ -15,11 +16,13 @@ class availableCourses extends StatefulWidget {
 class _availableCoursesState extends State<availableCourses> {
   List datas = ['Engineering', 'Engineering'];
   List photos = ['assets/4.jpg', 'assets/5.jpg'];
+  var data;
 
   @override
   void initState() {
     super.initState();
-    
+    data = categoriesServices().getCategories(context);
+    print(data);
   }
 
   @override
