@@ -29,6 +29,7 @@ class _dashboardState extends State<dashboard> {
   @override
   Widget build(BuildContext context) {
     return AppBaseScreen(
+        bgcolor: AppConst.white,
         isvisible: false,
         backgroundImage: false,
         backgroundAuth: false,
@@ -37,8 +38,8 @@ class _dashboardState extends State<dashboard> {
           backgroundColor: AppConst.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.only(
-              bottomLeft: Radius.circular(20),
-              bottomRight: Radius.circular(20),
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10),
             ),
           ),
           toolbarHeight: 200,
