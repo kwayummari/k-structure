@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:kstructure/src/gateway/categories.dart';
+import 'package:kstructure/src/gateway/content-by-category-id.dart';
 
+// ignore: must_be_immutable
 class contentsById extends StatefulWidget {
-  const contentsById({super.key});
+  var id;
+
+  contentsById({Key? key, required this.id}) : super(key: key);
 
   @override
   State<contentsById> createState() => _contentsByIdState();
@@ -11,9 +14,9 @@ class contentsById extends StatefulWidget {
 class _contentsByIdState extends State<contentsById> {
   Map<String, dynamic>? data;
 
-  void fetchData() async {
-    categoriesServices CategoriesServices = categoriesServices();
-    final datas = await CategoriesServices.getCategories(context);
+  void fetchData(id) async {
+    contentsByCategoriesServices ContentsServices = contentsByCategoriesServices();
+    final datas = await ContentsServices.getContents(context, id);
     setState(() {
       data = datas;
     });
@@ -23,7 +26,7 @@ class _contentsByIdState extends State<contentsById> {
   @override
   void initState() {
     super.initState();
-    fetchData();
+    fetchData(widget.id);
   }
 
   @override
