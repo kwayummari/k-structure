@@ -22,6 +22,7 @@ final Map<String, WidgetBuilder> routes = {
         ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
     return contentsByCategoryId(
       id: args?['content_id'],
+      title: args?['title'],
     );
   },
   // RouteNames.exploreBuses: (context) {
