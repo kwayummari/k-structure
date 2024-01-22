@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:kstructure/src/gateway/content-by-category-id.dart';
+import 'package:kstructure/src/widgets/app_base_screen.dart';
 
 class contentsByCategoryId extends StatefulWidget {
   var id;
@@ -32,6 +33,10 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return AppBaseScreen(
+        child: Container(),
+        isvisible: false,
+        backgroundImage: false,
+        backgroundAuth: false);
   }
 }
