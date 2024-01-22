@@ -1,7 +1,8 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:kstructure/src/gateway/content-by-category-id.dart';
 
-// ignore: must_be_immutable
 class contentsByCategoryId extends StatefulWidget {
   var id;
 
