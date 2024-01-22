@@ -3,14 +3,14 @@ import 'dart:convert';
 import 'package:kstructure/src/api/apis.dart';
 import 'package:flutter/material.dart';
 
-class categoriesServices {
+class contentsByCategoriesServices {
   Api api = Api();
 
-  Future getCategories(BuildContext context, int categoryId) async {
+  Future getContents(BuildContext context, int categoryId) async {
     Map<String, dynamic> data = {
       'phone_number': categoryId.toString(),
     };
-    final response = await api.post(context, 'categories', data);
+    final response = await api.post(context, 'contents_by_id', data);
     final decodedResponse = jsonDecode(response.body);
     return decodedResponse;
   }
