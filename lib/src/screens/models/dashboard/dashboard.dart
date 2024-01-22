@@ -1,5 +1,5 @@
 import 'package:kstructure/src/screens/models/available_courses/available_courses.dart';
-import 'package:kstructure/src/screens/models/client/topSearch/topSearch.dart';
+import 'package:kstructure/src/screens/models/topSearch/topSearch.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/widgets/app_base_screen.dart';
 import 'package:kstructure/src/widgets/app_input_text.dart';
