@@ -15,7 +15,6 @@ class dashboard extends StatefulWidget {
 }
 
 class _dashboardState extends State<dashboard> {
-  Position? position;
   @override
   void initState() {
     super.initState();
