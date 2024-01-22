@@ -19,16 +19,16 @@ class contentsByCategoryId extends StatefulWidget {
 }
 
 class _contentsByCategoryIdState extends State<contentsByCategoryId> {
-  Map<String, dynamic>? data;
+  List data = [];
 
   void fetchData() async {
     contentsByCategoriesServices ContentsServices =
         contentsByCategoriesServices();
     final datas = await ContentsServices.getContents(context, widget.id);
     setState(() {
-      data = datas;
+      data = datas['contents'];
     });
-    print(data!['contents'].length);
+    print(data);
   }
 
   @override
@@ -48,17 +48,14 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
       isvisible: false,
       backgroundImage: false,
       backgroundAuth: false,
-      child: data == null
-          ? CircularProgressIndicator(
-              color: AppConst.primary,
-            )
-          : AppListviewBuilder(
-              itemnumber: data!['contents'].length,
+      child:  data.isEmpty ? CircularProgressIndicator() :
+      AppListviewBuilder(
+              itemnumber: data.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: AppText(
-                    txt: data!['contents'][index]['title'],
+                    txt: data[index]['title'],
                     size: 15,
                     color: AppConst.white,
                   ),
