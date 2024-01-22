@@ -8,14 +8,14 @@ import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/widgets/app_button.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
 
-class availableCourses extends StatefulWidget {
-  const availableCourses({super.key});
+class contentsById extends StatefulWidget {
+  const contentsById({super.key});
 
   @override
-  State<availableCourses> createState() => _availableCoursesState();
+  State<contentsById> createState() => _contentsByIdState();
 }
 
-class _availableCoursesState extends State<availableCourses> {
+class _contentsByIdState extends State<contentsById> {
   Map<String, dynamic>? data;
 
   void fetchData() async {
