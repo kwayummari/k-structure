@@ -1,5 +1,6 @@
 import 'package:kstructure/src/screens/introduction/intro.dart';
 import 'package:kstructure/src/screens/models/bottomNavigationBar/bottomNavigationBar.dart';
+import 'package:kstructure/src/screens/models/contents/contents_by_category.dart';
 import 'package:kstructure/src/screens/models/dashboard/dashboard.dart';
 import 'package:kstructure/src/screens/models/profile/profile.dart';
 import 'package:kstructure/src/utils/routes/route-names.dart';
@@ -19,10 +20,8 @@ final Map<String, WidgetBuilder> routes = {
   RouteNames.buses: (context) {
     final Map<String, dynamic>? args =
         ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-    return buses(
-      destination: args?['destination'],
-      dire: args?['dire'],
-      route: args?['route'],
+    return contentsByCategoryId(
+      id: args?['content_id'],
     );
   },
   // RouteNames.exploreBuses: (context) {
