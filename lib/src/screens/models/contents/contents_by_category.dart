@@ -16,12 +16,12 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
   Map<String, dynamic>? data;
 
   void fetchData() async {
-    contentsByCategoriesServices ContentsServices = contentsByCategoriesServices();
+    contentsByCategoriesServices ContentsServices =
+        contentsByCategoriesServices();
     final datas = await ContentsServices.getContents(context, widget.id);
     setState(() {
       data = datas;
     });
-    print(data);
   }
 
   @override

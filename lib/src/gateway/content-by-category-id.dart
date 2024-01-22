@@ -8,7 +8,7 @@ class contentsByCategoriesServices {
 
   Future getContents(BuildContext context, int categoryId) async {
     Map<String, dynamic> data = {
-      'phone_number': categoryId.toString(),
+      'id': categoryId.toString(),
     };
     final response = await api.post(context, 'contents_by_id', data);
     final decodedResponse = jsonDecode(response.body);
