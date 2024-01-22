@@ -28,6 +28,7 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
     setState(() {
       data = datas;
     });
+    print(data!['contents'].length);
   }
 
   @override
@@ -57,7 +58,7 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                 return Padding(
                   padding: const EdgeInsets.only(left: 20),
                   child: AppText(
-                    txt: data!['contents']['title'],
+                    txt: data!['contents'][index]['title'],
                     size: 15,
                     color: AppConst.white,
                   ),
