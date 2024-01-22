@@ -34,9 +34,10 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
   @override
   Widget build(BuildContext context) {
     return AppBaseScreen(
-        child: Container(),
-        isvisible: false,
-        backgroundImage: false,
-        backgroundAuth: false);
+      isvisible: false,
+      backgroundImage: false,
+      backgroundAuth: false,
+      child: Container(),
+    );
   }
 }
