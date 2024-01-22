@@ -3,7 +3,7 @@ import 'package:kstructure/src/screens/models/bottomNavigationBar/bottomNavigati
 // import 'package:kstructure/src/screens/models/client/buses/bookBus.dart';
 // import 'package:kstructure/src/screens/models/client/buses/buses.dart';
 // import 'package:kstructure/src/screens/models/client/buses/exploreBuses.dart';
-import 'package:kstructure/src/screens/models/client/dashboard/dashboard.dart';
+import 'package:kstructure/src/screens/models/dashboard/dashboard.dart';
 import 'package:kstructure/src/screens/models/client/profile/profile.dart';
 import 'package:kstructure/src/utils/routes/route-names.dart';
 import 'package:flutter/material.dart';
