@@ -11,7 +11,6 @@ class IntroScreen extends StatefulWidget {
 }
 
 class _IntroScreenState extends State<IntroScreen> {
-  final PageController _pageController = PageController(initialPage: 0);
   final List<Slide> slides = [
     Slide(
       backgroundColor: AppConst.primary,
