@@ -2,7 +2,7 @@ import 'dart:io';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:kstructure/src/service/categories.dart';
+import 'package:kstructure/src/gateway/categories.dart';
 import 'package:kstructure/src/utils/animations/shimmers/available_courses.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/widgets/app_button.dart';

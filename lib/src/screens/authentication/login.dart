@@ -6,7 +6,7 @@ import 'package:kstructure/src/widgets/app_input_text.dart';
 import 'package:kstructure/src/widgets/socialMedia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:kstructure/src/service/login-services.dart';
+import 'package:kstructure/src/gateway/login-services.dart';
 import 'package:kstructure/src/widgets/app_base_screen.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
 import 'package:provider/provider.dart';

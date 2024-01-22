@@ -1,4 +1,4 @@
-import 'package:kstructure/src/service/dropdown-service.dart';
+import 'package:kstructure/src/gateway/dropdown-service.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:flutter/material.dart';
 
