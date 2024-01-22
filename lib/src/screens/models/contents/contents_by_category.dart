@@ -11,7 +11,8 @@ class contentsByCategoryId extends StatefulWidget {
   var id;
   var title;
 
-  contentsByCategoryId({Key? key, required this.id, required this.title }) : super(key: key);
+  contentsByCategoryId({Key? key, required this.id, required this.title})
+      : super(key: key);
 
   @override
   State<contentsByCategoryId> createState() => _contentsByCategoryIdState();
@@ -39,25 +40,29 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
   Widget build(BuildContext context) {
     return AppBaseScreen(
       appBar: AppBar(
-        title: AppText(txt: '', size: 18),
+        title: AppText(txt: widget.title, size: 18),
         centerTitle: true,
       ),
       bgcolor: AppConst.white,
       isvisible: false,
       backgroundImage: false,
       backgroundAuth: false,
-      child: AppListviewBuilder(
-          itemnumber: data!['contents'].length,
-          itemBuilder: (BuildContext context, int index) {
-            return Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: AppText(
-                txt: data!['contents']['title'],
-                size: 15,
-                color: AppConst.white,
-              ),
-            );
-          }),
+      child: data == null
+          ? CircularProgressIndicator(
+              color: AppConst.primary,
+            )
+          : AppListviewBuilder(
+              itemnumber: data!['contents'].length,
+              itemBuilder: (BuildContext context, int index) {
+                return Padding(
+                  padding: const EdgeInsets.only(left: 20),
+                  child: AppText(
+                    txt: data!['contents']['title'],
+                    size: 15,
+                    color: AppConst.white,
+                  ),
+                );
+              }),
     );
   }
 }
