@@ -61,8 +61,9 @@ class _availableCoursesState extends State<availableCourses> {
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(
-                        context, RouteNames.getContentsByCategory,
-                        arguments: {'id': data!['categories'][i]['id']});
+                        context, RouteNames.getContentsByCategory, arguments: {
+                      'content_id': data!['categories'][i]['id']
+                    });
                   },
                   child: Stack(
                     children: [

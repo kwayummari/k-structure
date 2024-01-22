@@ -15,9 +15,9 @@ class contentsByCategoryId extends StatefulWidget {
 class _contentsByCategoryIdState extends State<contentsByCategoryId> {
   Map<String, dynamic>? data;
 
-  void fetchData(id) async {
+  void fetchData() async {
     contentsByCategoriesServices ContentsServices = contentsByCategoriesServices();
-    final datas = await ContentsServices.getContents(context, id);
+    final datas = await ContentsServices.getContents(context, widget.id);
     setState(() {
       data = datas;
     });
@@ -27,7 +27,7 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
   @override
   void initState() {
     super.initState();
-    fetchData(widget.id);
+    fetchData();
   }
 
   @override
