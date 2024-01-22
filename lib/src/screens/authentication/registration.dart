@@ -16,7 +16,6 @@ class Registration extends StatefulWidget {
 }
 
 class _RegistrationState extends State<Registration> {
-  final registrationService _apiService = registrationService();
   TextEditingController fullname = TextEditingController();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
