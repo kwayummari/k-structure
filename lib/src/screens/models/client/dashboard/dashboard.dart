@@ -1,7 +1,6 @@
 import 'package:kstructure/src/screens/models/client/available_courses/available_courses.dart';
 import 'package:kstructure/src/screens/models/client/topSearch/topSearch.dart';
 import 'package:kstructure/src/utils/app_const.dart';
-import 'package:kstructure/src/utils/routes/route-names.dart';
 import 'package:kstructure/src/widgets/app_base_screen.dart';
 import 'package:kstructure/src/widgets/app_input_text.dart';
 import 'package:flutter/material.dart';
