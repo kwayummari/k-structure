@@ -24,6 +24,7 @@ class _availableCoursesState extends State<availableCourses> {
     setState(() {
       data = datas;
     });
+    print(data);
   }
 
   @override
@@ -34,73 +35,6 @@ class _availableCoursesState extends State<availableCourses> {
 
   @override
   Widget build(BuildContext context) {
-    return data == null
-        ? availableCoursesShimmerLoad(
-            width: 400,
-            height: 200,
-            borderRadius: 15,
-          )
-        : CarouselSlider(
-            options: CarouselOptions(
-              height: Platform.isIOS ? 200 : 170,
-              aspectRatio: 16 / 9,
-              viewportFraction: 0.9,
-              initialPage: 0,
-              enableInfiniteScroll: true,
-              reverse: false,
-              autoPlay: true,
-              autoPlayInterval: Duration(seconds: 8),
-              autoPlayAnimationDuration: Duration(seconds: 5),
-              autoPlayCurve: Curves.linear,
-              enlargeCenterPage: true,
-              scrollDirection: Axis.horizontal,
-            ),
-            items: <Widget>[
-              for (var i = 0; i < data!['categories'].length; i++)
-                GestureDetector(
-                  onTap: () => null,
-                  child: Stack(
-                    children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                          image: DecorationImage(
-                            image: NetworkImage(
-                                '${dotenv.env['IMAGE_SERVER']}${data!['categories'][i]['image']}'),
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                          color: const Color.fromARGB(255, 33, 58, 243)
-                              .withOpacity(0.5),
-                        ),
-                      ),
-                      Positioned(
-                          top: 20,
-                          left: 20,
-                          child: AppText(
-                            txt: data!['categories'][i]['title'],
-                            color: Colors.white,
-                            weight: FontWeight.w700,
-                            size: 25,
-                          )),
-                      Positioned(
-                        bottom: 10,
-                        left: 20,
-                        child: AppButton(
-                            onPress: () => null,
-                            label: 'View',
-                            borderRadius: 5,
-                            textColor: AppConst.black,
-                            bcolor: AppConst.white),
-                      )
-                    ],
-                  ),
-                )
-            ],
-          );
+    return Container();
   }
 }
