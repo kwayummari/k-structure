@@ -7,8 +7,6 @@ class RouteNames {
   static const String dashboard = '/dashboard';
   static const String profile = '/profile';
   static const String bottomNavigationBar = '/bottomNavigationBar';
-  static const String pricing = '/pricing';
-  static const String buses = '/buses';
   static const String exploreBuses = '/exploreBuses';
   static const String bookBus = '/bookBus';
 }
