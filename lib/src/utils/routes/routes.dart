@@ -17,7 +17,7 @@ final Map<String, WidgetBuilder> routes = {
   RouteNames.dashboard: (context) => dashboard(),
   RouteNames.profile: (context) => profile(),
   RouteNames.bottomNavigationBar: (context) => bottomNavigation(),
-  RouteNames.buses: (context) {
+  RouteNames.getContentsByCategory: (context) {
     final Map<String, dynamic>? args =
         ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
     return contentsByCategoryId(
