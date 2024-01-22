@@ -5,6 +5,7 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:kstructure/src/gateway/categories.dart';
 import 'package:kstructure/src/utils/animations/shimmers/available_courses.dart';
 import 'package:kstructure/src/utils/app_const.dart';
+import 'package:kstructure/src/utils/routes/route-names.dart';
 import 'package:kstructure/src/widgets/app_button.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
 
@@ -58,7 +59,9 @@ class _availableCoursesState extends State<availableCourses> {
             items: <Widget>[
               for (var i = 0; i < data!['categories'].length; i++)
                 GestureDetector(
-                  onTap: () => null,
+                  onTap: () => Navigator.pushNamed(
+                                context, RouteNames.getContentsByCategory,
+                                arguments: {'id': data!['categories'][i]['id']}),
                   child: Stack(
                     children: [
                       Container(
