@@ -1,5 +1,5 @@
 import 'package:kstructure/src/screens/introduction/intro.dart';
-import 'package:kstructure/src/screens/models/client/bottomNavigationBar/bottomNavigationBar.dart';
+import 'package:kstructure/src/screens/models/bottomNavigationBar/bottomNavigationBar.dart';
 // import 'package:kstructure/src/screens/models/client/buses/bookBus.dart';
 // import 'package:kstructure/src/screens/models/client/buses/buses.dart';
 // import 'package:kstructure/src/screens/models/client/buses/exploreBuses.dart';
