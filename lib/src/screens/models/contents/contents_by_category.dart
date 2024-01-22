@@ -28,7 +28,6 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
     setState(() {
       data = datas['contents'];
     });
-    print(data);
   }
 
   @override
@@ -48,8 +47,9 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
       isvisible: false,
       backgroundImage: false,
       backgroundAuth: false,
-      child:  data.isEmpty ? CircularProgressIndicator() :
-      AppListviewBuilder(
+      child: data.isEmpty
+          ? CircularProgressIndicator()
+          : AppListviewBuilder(
               itemnumber: data.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
@@ -57,7 +57,7 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                   child: AppText(
                     txt: data[index]['title'],
                     size: 15,
-                    color: AppConst.white,
+                    color: AppConst.black,
                   ),
                 );
               }),
