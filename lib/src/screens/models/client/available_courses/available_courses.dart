@@ -16,8 +16,6 @@ class availableCourses extends StatefulWidget {
 }
 
 class _availableCoursesState extends State<availableCourses> {
-  List datas = ['Engineering', 'Engineering'];
-  List photos = ['assets/4.jpg', 'assets/5.jpg'];
   Map<String, dynamic>? data;
 
   void fetchData() async {
