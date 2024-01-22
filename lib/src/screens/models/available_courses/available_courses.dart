@@ -62,7 +62,8 @@ class _availableCoursesState extends State<availableCourses> {
                   onTap: () {
                     Navigator.pushNamed(
                         context, RouteNames.getContentsByCategory, arguments: {
-                      'content_id': data!['categories'][i]['id']
+                      'content_id': data!['categories'][i]['id'],
+                      'title': data!['categories'][i]['title']
                     });
                   },
                   child: Stack(
