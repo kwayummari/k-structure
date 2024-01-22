@@ -1,8 +1,5 @@
 import 'package:kstructure/src/screens/introduction/intro.dart';
 import 'package:kstructure/src/screens/models/bottomNavigationBar/bottomNavigationBar.dart';
-// import 'package:kstructure/src/screens/models/client/buses/bookBus.dart';
-// import 'package:kstructure/src/screens/models/client/buses/buses.dart';
-// import 'package:kstructure/src/screens/models/client/buses/exploreBuses.dart';
 import 'package:kstructure/src/screens/models/dashboard/dashboard.dart';
 import 'package:kstructure/src/screens/models/profile/profile.dart';
 import 'package:kstructure/src/utils/routes/route-names.dart';
@@ -19,15 +16,15 @@ final Map<String, WidgetBuilder> routes = {
   RouteNames.dashboard: (context) => dashboard(),
   RouteNames.profile: (context) => profile(),
   RouteNames.bottomNavigationBar: (context) => bottomNavigation(),
-  // RouteNames.buses: (context) {
-  //   final Map<String, dynamic>? args =
-  //       ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-  //   return buses(
-  //     destination: args?['destination'],
-  //     dire: args?['dire'],
-  //     route: args?['route'],
-  //   );
-  // },
+  RouteNames.buses: (context) {
+    final Map<String, dynamic>? args =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    return buses(
+      destination: args?['destination'],
+      dire: args?['dire'],
+      route: args?['route'],
+    );
+  },
   // RouteNames.exploreBuses: (context) {
   //   final Map<String, dynamic>? args =
   //       ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
