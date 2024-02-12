@@ -8,6 +8,7 @@ class AppText extends StatelessWidget {
   var weight;
   double size;
   TextDecoration? textdecoration;
+  final bool? softWrap;
   AppText(
       {Key? key,
       required this.txt,
@@ -15,7 +16,9 @@ class AppText extends StatelessWidget {
       this.align,
       this.weight,
       this.textdecoration,
-      required this.size})
+      required this.size,
+      this.softWrap
+      })
       : super(key: key);
 
   @override
@@ -23,6 +26,7 @@ class AppText extends StatelessWidget {
     return Text(
       txt.toString(),
       textAlign: align ?? null,
+      softWrap: softWrap,
       style: TextStyle(
         decoration: textdecoration,
         color: color,

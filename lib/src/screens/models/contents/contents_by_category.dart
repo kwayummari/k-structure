@@ -55,12 +55,14 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
               itemnumber: data.length,
               itemBuilder: (BuildContext context, int index) {
                 return Padding(
-                  padding: const EdgeInsets.only(left: 10, right: 10),
+                  padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
                   child: Stack(
                     children: [
                       Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          color: const Color.fromARGB(255, 33, 58, 243)
+                              .withOpacity(0.5),
                           image: DecorationImage(
                             image: NetworkImage(
                               '${dotenv.env['IMAGE_SERVER']}${data[index]['image']}',
@@ -71,19 +73,6 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                         child: Image.network(
                             '${dotenv.env['IMAGE_SERVER']}${data[index]['image']}'),
                       ),
-                      Container(
-                        child: Opacity(
-                          opacity: 0.5,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10.0)),
-                              color: const Color.fromARGB(255, 33, 58, 243)
-                                  .withOpacity(0.5),
-                            ),
-                          ),
-                        ),
-                      ),
                       Positioned(
                         top: 20,
                         left: 20,
@@ -92,6 +81,7 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                           color: Colors.white,
                           weight: FontWeight.w700,
                           size: 25,
+                          softWrap: true,
                         ),
                       ),
                       Positioned(
