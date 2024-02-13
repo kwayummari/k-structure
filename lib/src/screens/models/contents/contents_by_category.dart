@@ -31,6 +31,9 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
       data = datas['contents'];
     });
   }
+  void stars(number) {
+    return 
+  }
 
   @override
   void initState() {
