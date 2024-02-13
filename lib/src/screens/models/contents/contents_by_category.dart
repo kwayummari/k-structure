@@ -70,11 +70,11 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                       ),
                       Positioned(
                         top: 20,
-                        child: Align(
-                          alignment: Alignment.center,
-                          child: Column(
-                            children: [
-                              Container(
+                        child: Column(
+                          children: [
+                            Align(
+                              alignment: Alignment.centerLeft,
+                              child: Container(
                                 width: 380,
                                 child: AppText(
                                   txt: data[index]['title'],
@@ -84,24 +84,20 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                                   softWrap: true,
                                 ),
                               ),
-                              Align(
-                                alignment: Alignment.centerLeft,
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  children: [
-                                    StarRating(
-                                        numberOfStars: data[index]['star']),
-                                    AppText(
-                                      txt: '(' + data[index]['readers'] + ')',
-                                      size: 18,
-                                      weight: FontWeight.w700,
-                                      color: AppConst.white,
-                                    ),
-                                  ],
+                            ),
+                            Row(
+                              children: [
+                                StarRating(
+                                    numberOfStars: data[index]['star']),
+                                AppText(
+                                  txt: '(' + data[index]['readers'] + ')',
+                                  size: 18,
+                                  weight: FontWeight.w700,
+                                  color: AppConst.white,
                                 ),
-                              )
-                            ],
-                          ),
+                              ],
+                            )
+                          ],
                         ),
                       ),
                       Positioned(
