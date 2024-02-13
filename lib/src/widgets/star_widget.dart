@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:kstructure/src/utils/app_const.dart';
 
 class StarRating extends StatelessWidget {
   final String numberOfStars;
@@ -14,8 +15,9 @@ class StarRating extends StatelessWidget {
         Icons.star,
         color: Colors.amber,
       ),
+      unratedColor: AppConst.whiteOpacity,
       itemCount: 5,
-      itemSize: 30.0,
+      itemSize: 20.0,
       direction: Axis.horizontal,
     );
   }
