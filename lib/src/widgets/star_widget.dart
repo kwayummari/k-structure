@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kstructure/src/utils/app_const.dart';
 
 class StarRating extends StatelessWidget {
   final int numberOfStars;
@@ -12,7 +13,7 @@ class StarRating extends StatelessWidget {
         numberOfStars,
         (index) => Icon(
           Icons.star,
-          color: Colors.amber,
+          color: AppConst.white,
           size: 24,
         ),
       ),
