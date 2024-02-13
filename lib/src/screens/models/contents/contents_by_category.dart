@@ -59,18 +59,26 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                   padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
                   child: Stack(
                     children: [
-                      ColorFiltered(
-                        colorFilter: ColorFilter.mode(
-                          Colors.black.withOpacity(0.6),
-                          BlendMode.srcOver,
+                      Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.all(Radius.circular(10.0))
                         ),
-                        child: Image.network(
-                          '${dotenv.env['IMAGE_SERVER']}${data[index]['image']}',
+                        child: ColorFiltered(
+                          colorFilter: ColorFilter.mode(
+                            Colors.black.withOpacity(0.6),
+                            BlendMode.srcOver,
+                          ),
+                          child: Image.network(
+                            '${dotenv.env['IMAGE_SERVER']}${data[index]['image']}',
+                          ),
                         ),
                       ),
                       Positioned(
+                        left: 20,
+                        right: 20,
                         top: 20,
                         child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Align(
                               alignment: Alignment.centerLeft,
@@ -87,8 +95,7 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                             ),
                             Row(
                               children: [
-                                StarRating(
-                                    numberOfStars: data[index]['star']),
+                                StarRating(numberOfStars: data[index]['star']),
                                 AppText(
                                   txt: '(' + data[index]['readers'] + ')',
                                   size: 18,
@@ -101,7 +108,7 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                         ),
                       ),
                       Positioned(
-                        bottom: 10,
+                        bottom: 20,
                         left: 20,
                         child: AppText(
                           txt: data[index]['price'] + 'Tzs',
