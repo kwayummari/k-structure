@@ -8,6 +8,7 @@ import 'package:kstructure/src/widgets/app_base_screen.dart';
 import 'package:kstructure/src/widgets/app_button.dart';
 import 'package:kstructure/src/widgets/app_listview_builder.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
+import 'package:kstructure/src/widgets/star_widget.dart';
 
 class contentsByCategoryId extends StatefulWidget {
   var id;
@@ -31,6 +32,7 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
       data = datas['contents'];
     });
   }
+
   @override
   void initState() {
     super.initState();
@@ -70,18 +72,35 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                         top: 20,
                         child: Align(
                           alignment: Alignment.center,
-                          child: Container(
-                            width: 380,
-                            child: AppText(
-                              txt: data[index]['title'] +
-                                  '\n(' +
-                                  data[index]['readers'] +
-                                  ')',
-                              color: Colors.white,
-                              weight: FontWeight.w700,
-                              size: 25,
-                              softWrap: true,
-                            ),
+                          child: Column(
+                            children: [
+                              Container(
+                                width: 380,
+                                child: AppText(
+                                  txt: data[index]['title'],
+                                  color: Colors.white,
+                                  weight: FontWeight.w700,
+                                  size: 25,
+                                  softWrap: true,
+                                ),
+                              ),
+                              Align(
+                                alignment: Alignment.centerLeft,
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    StarRating(
+                                        numberOfStars: data[index]['star']),
+                                    AppText(
+                                      txt: '(' + data[index]['readers'] + ')',
+                                      size: 18,
+                                      weight: FontWeight.w700,
+                                      color: AppConst.white,
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
                         ),
                       ),
