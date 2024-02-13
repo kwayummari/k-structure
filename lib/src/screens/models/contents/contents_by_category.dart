@@ -58,41 +58,43 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                   padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
                   child: Stack(
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                          color: const Color.fromARGB(255, 33, 58, 243)
-                              .withOpacity(0.5),
-                          image: DecorationImage(
-                            image: NetworkImage(
-                              '${dotenv.env['IMAGE_SERVER']}${data[index]['image']}',
-                            ),
-                            fit: BoxFit.cover,
-                          ),
+                      ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          Colors.black.withOpacity(0.6),
+                          BlendMode.srcOver,
                         ),
                         child: Image.network(
-                            '${dotenv.env['IMAGE_SERVER']}${data[index]['image']}'),
+                          '${dotenv.env['IMAGE_SERVER']}${data[index]['image']}',
+                        ),
                       ),
                       Positioned(
                         top: 20,
-                        left: 20,
-                        child: AppText(
-                          txt: data[index]['title'],
-                          color: Colors.white,
-                          weight: FontWeight.w700,
-                          size: 25,
-                          softWrap: true,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Container(
+                            width: 380,
+                            child: AppText(
+                              txt: data[index]['title'] +
+                                  '\n(' +
+                                  data[index]['readers'] +
+                                  ')',
+                              color: Colors.white,
+                              weight: FontWeight.w700,
+                              size: 25,
+                              softWrap: true,
+                            ),
+                          ),
                         ),
                       ),
                       Positioned(
                         bottom: 10,
                         left: 20,
-                        child: AppButton(
-                          onPress: () => null,
-                          label: 'View',
-                          borderRadius: 5,
-                          textColor: AppConst.black,
-                          bcolor: AppConst.white,
+                        child: AppText(
+                          txt: data[index]['price'] + 'Tzs',
+                          color: Colors.white,
+                          weight: FontWeight.w700,
+                          size: 20,
+                          softWrap: true,
                         ),
                       )
                     ],
