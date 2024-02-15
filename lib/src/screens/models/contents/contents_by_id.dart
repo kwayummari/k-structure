@@ -6,6 +6,7 @@ import 'package:kstructure/src/gateway/content-by-category-id.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/widgets/app_base_screen.dart';
 import 'package:kstructure/src/widgets/app_button.dart';
+import 'package:kstructure/src/widgets/app_course_details.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
 
 class contentsById extends StatefulWidget {
@@ -157,47 +158,24 @@ class _contentsByIdState extends State<contentsById> {
                   SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    children: [
-                      Icon(
+                  AppCourseDetails(
+                      icon: Icon(
                         Icons.menu_book_rounded,
                         size: 30,
                         color: Colors.black,
                       ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      AppText(
-                        txt: contentDetails[0]['assignment'] + ' Assignments',
-                        size: 20,
-                        weight: FontWeight.w600,
-                        color: AppConst.black,
-                      ),
-                    ],
-                  ),
+                      text: contentDetails[0]['assignment'] + ' Assignments'),
                   SizedBox(
                     height: 10,
                   ),
-                  
-                  Row(
-                    children: [
-                      Icon(
+                  AppCourseDetails(
+                      icon: Icon(
                         Icons.menu_book_rounded,
                         size: 30,
                         color: Colors.black,
                       ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      AppText(
-                        txt: contentDetails[0]['assignment'] +
-                            ' Downloadable sources',
-                        size: 20,
-                        weight: FontWeight.w600,
-                        color: AppConst.black,
-                      ),
-                    ],
-                  ),
+                      text: contentDetails[0]['assignment'] +
+                          ' Downloadable sources')
                 ],
               ));
   }
