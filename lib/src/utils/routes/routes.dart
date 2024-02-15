@@ -25,20 +25,12 @@ final Map<String, WidgetBuilder> routes = {
       title: args?['title'],
     );
   },
-  // RouteNames.exploreBuses: (context) {
-  //   final Map<String, dynamic>? args =
-  //       ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-  //   return exploreBuses(
-  //     id: args?['id'],
-  //     busNumber: args?['busNumber'],
-  //   );
-  // },
-  // RouteNames.bookBus: (context) {
-  //   final Map<String, dynamic>? args =
-  //       ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-  //   return bookBus(
-  //     id: args?['id'],
-  //     seats: args?['seats'],
-  //   );
-  // },
+  RouteNames.getContentsById: (context) {
+    final Map<String, dynamic>? args =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    return contentsByCategoryId(
+      id: args?['content_id'],
+      title: args?['title'],
+    );
+  },
 };
