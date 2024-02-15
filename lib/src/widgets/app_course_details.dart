@@ -6,25 +6,24 @@ class AppCourseDetails extends StatelessWidget {
   final Icon icon;
   final String text;
 
-  const AppCourseDetails(
-      {Key? key, required this.icon, required this.text})
+  const AppCourseDetails({Key? key, required this.icon, required this.text})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
-                    children: [
-                      icon,
-                      SizedBox(
-                        width: 20,
-                      ),
-                      AppText(
-                        txt: text,
-                        size: 20,
-                        weight: FontWeight.w600,
-                        color: AppConst.black,
-                      ),
-                    ],
-                  );
+      children: [
+        icon,
+        SizedBox(
+          width: 20,
+        ),
+        AppText(
+          txt: text,
+          size: 20,
+          weight: FontWeight.w600,
+          color: AppConst.black,
+        ),
+      ],
+    );
   }
 }

@@ -178,6 +178,7 @@ class _contentsByIdState extends State<contentsById> {
                   SizedBox(
                     height: 10,
                   ),
+                  
                   Row(
                     children: [
                       Icon(
