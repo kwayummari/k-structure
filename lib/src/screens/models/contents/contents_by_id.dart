@@ -158,7 +158,28 @@ class _contentsByIdState extends State<contentsById> {
                         color: Colors.black,
                       ),
                       text: contentDetails[0]['assignment'] +
-                          ' Downloadable sources')
+                          ' Downloadable sources'),
+                  AppCourseDetails(
+                      icon: Icon(
+                        Icons.badge,
+                        size: 30,
+                        color: Colors.black,
+                      ),
+                      text: contentDetails[0]['certificate_id'] == '1'
+                          ? ' Certification after completion'
+                          : 'No available Certificate'),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  AppText(
+                    txt: 'What you will learn',
+                    size: 23,
+                    color: AppConst.black,
+                    weight: FontWeight.w900,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
                 ],
               ));
   }
