@@ -143,10 +143,7 @@ class _contentsByIdState extends State<contentsById> {
                         color: Colors.black,
                       ),
                       text: contentDetails[0]['hours'] +
-                            ' hours on Demand- Tutorial'),
-                  SizedBox(
-                    height: 10,
-                  ),
+                          ' hours on Demand- Tutorial'),
                   AppCourseDetails(
                       icon: Icon(
                         Icons.menu_book_rounded,
@@ -154,9 +151,6 @@ class _contentsByIdState extends State<contentsById> {
                         color: Colors.black,
                       ),
                       text: contentDetails[0]['assignment'] + ' Assignments'),
-                  SizedBox(
-                    height: 10,
-                  ),
                   AppCourseDetails(
                       icon: Icon(
                         Icons.menu_book_rounded,

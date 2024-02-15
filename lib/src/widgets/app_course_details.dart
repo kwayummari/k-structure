@@ -11,19 +11,22 @@ class AppCourseDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        icon,
-        SizedBox(
-          width: 20,
-        ),
-        AppText(
-          txt: text,
-          size: 20,
-          weight: FontWeight.w600,
-          color: AppConst.black,
-        ),
-      ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10, left: 20),
+      child: Row(
+        children: [
+          icon,
+          SizedBox(
+            width: 20,
+          ),
+          AppText(
+            txt: text,
+            size: 20,
+            weight: FontWeight.w600,
+            color: AppConst.black,
+          ),
+        ],
+      ),
     );
   }
 }
