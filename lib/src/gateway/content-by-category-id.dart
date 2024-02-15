@@ -10,7 +10,7 @@ class contentsByCategoriesServices {
     Map<String, dynamic> data = {
       'id': categoryId.toString(),
     };
-    final response = await api.post(context, 'contents_by_id', data);
+    final response = await api.post(context, 'contents_by_categoryId', data);
     final decodedResponse = jsonDecode(response.body);
     return decodedResponse;
   }

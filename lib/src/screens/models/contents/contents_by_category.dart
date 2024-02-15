@@ -5,7 +5,6 @@ import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:kstructure/src/gateway/content-by-category-id.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/widgets/app_base_screen.dart';
-import 'package:kstructure/src/widgets/app_button.dart';
 import 'package:kstructure/src/widgets/app_listview_builder.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
 import 'package:kstructure/src/widgets/star_widget.dart';
@@ -59,18 +58,13 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                   padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
                   child: Stack(
                     children: [
-                      Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(10.0))
+                      ColorFiltered(
+                        colorFilter: ColorFilter.mode(
+                          Colors.black.withOpacity(0.6),
+                          BlendMode.srcOver,
                         ),
-                        child: ColorFiltered(
-                          colorFilter: ColorFilter.mode(
-                            Colors.black.withOpacity(0.6),
-                            BlendMode.srcOver,
-                          ),
-                          child: Image.network(
-                            '${dotenv.env['IMAGE_SERVER']}${data[index]['image']}',
-                          ),
+                        child: Image.network(
+                          '${dotenv.env['IMAGE_SERVER']}${data[index]['image']}',
                         ),
                       ),
                       Positioned(
