@@ -128,10 +128,32 @@ class _contentsByIdState extends State<contentsById> {
                   ),
                   AppText(
                     txt: 'This Course Includes',
-                    size: 20,
+                    size: 23,
                     color: AppConst.black,
-                    weight: FontWeight.bold,
-                  )
+                    weight: FontWeight.w900,
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.live_tv_outlined,
+                        size: 30,
+                        color: Colors.black,
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      AppText(
+                        txt: contentDetails[0]['hours'] +
+                            ' hours on Demand- Tutorial',
+                        size: 20,
+                        weight: FontWeight.bold,
+                        color: AppConst.black,
+                      ),
+                    ],
+                  ),
                 ],
               ));
   }
