@@ -23,6 +23,7 @@ class contentsById extends StatefulWidget {
 class _contentsByIdState extends State<contentsById> {
   List contentDetails = [];
   List videos = [];
+  bool isExpanded = false;
 
   void fetchData() async {
     contentsByCategoriesServices ContentsServices =
@@ -35,8 +36,6 @@ class _contentsByIdState extends State<contentsById> {
       contentDetails = details['details'] ?? [];
       videos = contentVideos['videos'] ?? [];
     });
-    print(contentDetails);
-    print(videos);
   }
 
   @override
@@ -179,6 +178,39 @@ class _contentsByIdState extends State<contentsById> {
                   ),
                   SizedBox(
                     height: 10,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 20, right: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        AppText(
+                          txt: isExpanded
+                              ? contentDetails[0]['description']
+                              : (contentDetails[0]['description'].length > 100
+                                  ? contentDetails[0]['description']
+                                          .substring(0, 100) +
+                                      '...'
+                                  : contentDetails[0]['description']),
+                          size: 15,
+                          weight: FontWeight.w600,
+                          color: AppConst.black,
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isExpanded = !isExpanded;
+                            });
+                          },
+                          child: AppText(
+                            txt: isExpanded ? 'Read less' : 'Read more',
+                            size: 15,
+                            weight: FontWeight.w600,
+                            color: AppConst.primary,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ));
