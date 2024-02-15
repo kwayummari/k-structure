@@ -42,7 +42,11 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
   Widget build(BuildContext context) {
     return AppBaseScreen(
       appBar: AppBar(
-        title: AppText(txt: widget.title, size: 18),
+        title: AppText(
+          txt: widget.title,
+          size: 18,
+          weight: FontWeight.bold,
+        ),
         centerTitle: true,
       ),
       bgcolor: AppConst.white,
