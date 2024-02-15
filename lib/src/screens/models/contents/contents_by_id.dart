@@ -9,18 +9,18 @@ import 'package:kstructure/src/widgets/app_listview_builder.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
 import 'package:kstructure/src/widgets/star_widget.dart';
 
-class contentsByCategoryId extends StatefulWidget {
+class contentsById extends StatefulWidget {
   var id;
   var title;
 
-  contentsByCategoryId({Key? key, required this.id, required this.title})
+  contentsById({Key? key, required this.id, required this.title})
       : super(key: key);
 
   @override
-  State<contentsByCategoryId> createState() => _contentsByCategoryIdState();
+  State<contentsById> createState() => _contentsByIdState();
 }
 
-class _contentsByCategoryIdState extends State<contentsByCategoryId> {
+class _contentsByIdState extends State<contentsById> {
   List data = [];
 
   void fetchData() async {
