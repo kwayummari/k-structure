@@ -149,7 +149,50 @@ class _contentsByIdState extends State<contentsById> {
                         txt: contentDetails[0]['hours'] +
                             ' hours on Demand- Tutorial',
                         size: 20,
-                        weight: FontWeight.bold,
+                        weight: FontWeight.w600,
+                        color: AppConst.black,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.menu_book_rounded,
+                        size: 30,
+                        color: Colors.black,
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      AppText(
+                        txt: contentDetails[0]['assignment'] + ' Assignments',
+                        size: 20,
+                        weight: FontWeight.w600,
+                        color: AppConst.black,
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(
+                    children: [
+                      Icon(
+                        Icons.menu_book_rounded,
+                        size: 30,
+                        color: Colors.black,
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      AppText(
+                        txt: contentDetails[0]['assignment'] +
+                            ' Downloadable sources',
+                        size: 20,
+                        weight: FontWeight.w600,
                         color: AppConst.black,
                       ),
                     ],
