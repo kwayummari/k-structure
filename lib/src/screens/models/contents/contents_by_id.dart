@@ -22,13 +22,18 @@ class contentsById extends StatefulWidget {
 
 class _contentsByIdState extends State<contentsById> {
   List contentDetails = [];
+  List videos = [];
 
   void fetchData() async {
     contentsByCategoriesServices ContentsServices =
         contentsByCategoriesServices();
-    final datas = await ContentsServices.getContentsDetails(context, widget.id);
+    final details =
+        await ContentsServices.getContentsDetails(context, widget.id);
+    final contentVideos =
+        await ContentsServices.getContentsDetails(context, widget.id);
     setState(() {
-      contentDetails = datas['contents'];
+      contentDetails = details['details'];
+      videos = contentVideos['videos'];
     });
   }
 
@@ -41,17 +46,16 @@ class _contentsByIdState extends State<contentsById> {
   @override
   Widget build(BuildContext context) {
     return AppBaseScreen(
-      appBar: AppBar(
-        title: AppText(txt: widget.title, size: 18),
-        centerTitle: true,
-      ),
-      bgcolor: AppConst.white,
-      isvisible: false,
-      backgroundImage: false,
-      backgroundAuth: false,
-      child: data.isEmpty
-          ? CircularProgressIndicator()
-          : CircularProgressIndicator()
-    );
+        appBar: AppBar(
+          title: AppText(txt: widget.title, size: 18),
+          centerTitle: true,
+        ),
+        bgcolor: AppConst.white,
+        isvisible: false,
+        backgroundImage: false,
+        backgroundAuth: false,
+        child: contentDetails.isEmpty || videos.isEmpty
+            ? CircularProgressIndicator()
+            : CircularProgressIndicator());
   }
 }
