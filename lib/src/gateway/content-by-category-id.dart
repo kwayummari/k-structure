@@ -26,7 +26,7 @@ class contentsByCategoriesServices {
     Map<String, dynamic> data = {
       'id': contentId.toString(),
     };
-    final response = await api.post(context, 'content_details', data);
+    final response = await api.post(context, 'content_videos_by_id', data);
     final decodedResponse = jsonDecode(response.body);
     return decodedResponse;
   }
