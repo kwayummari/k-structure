@@ -62,6 +62,7 @@ class _contentsByIdState extends State<contentsById> {
         child: contentDetails.isEmpty && videos.isEmpty
             ? CircularProgressIndicator()
             : Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Stack(
                     children: [
@@ -121,6 +122,15 @@ class _contentsByIdState extends State<contentsById> {
                         ],
                       ),
                     ),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  AppText(
+                    txt: 'This Course Includes',
+                    size: 20,
+                    color: AppConst.black,
+                    weight: FontWeight.bold,
                   )
                 ],
               ));
