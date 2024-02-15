@@ -14,4 +14,12 @@ class contentsByCategoriesServices {
     final decodedResponse = jsonDecode(response.body);
     return decodedResponse;
   }
+  Future getContentsDetails(BuildContext context, int contentId) async {
+    Map<String, dynamic> data = {
+      'id': contentId.toString(),
+    };
+    final response = await api.post(context, 'content_details', data);
+    final decodedResponse = jsonDecode(response.body);
+    return decodedResponse;
+  }
 }
