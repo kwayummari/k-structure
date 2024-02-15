@@ -1,13 +1,10 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:kstructure/src/gateway/content-by-category-id.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/widgets/app_base_screen.dart';
-import 'package:kstructure/src/widgets/app_listview_builder.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
-import 'package:kstructure/src/widgets/star_widget.dart';
 
 class contentsById extends StatefulWidget {
   var id;
@@ -35,6 +32,8 @@ class _contentsByIdState extends State<contentsById> {
       contentDetails = details['details'];
       videos = contentVideos['videos'];
     });
+    print(contentDetails);
+    print(videos);
   }
 
   @override
