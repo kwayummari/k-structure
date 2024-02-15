@@ -136,25 +136,14 @@ class _contentsByIdState extends State<contentsById> {
                   SizedBox(
                     height: 10,
                   ),
-                  Row(
-                    children: [
-                      Icon(
+                  AppCourseDetails(
+                      icon: Icon(
                         Icons.live_tv_outlined,
                         size: 30,
                         color: Colors.black,
                       ),
-                      SizedBox(
-                        width: 20,
-                      ),
-                      AppText(
-                        txt: contentDetails[0]['hours'] +
-                            ' hours on Demand- Tutorial',
-                        size: 20,
-                        weight: FontWeight.w600,
-                        color: AppConst.black,
-                      ),
-                    ],
-                  ),
+                      text: contentDetails[0]['hours'] +
+                            ' hours on Demand- Tutorial'),
                   SizedBox(
                     height: 10,
                   ),
