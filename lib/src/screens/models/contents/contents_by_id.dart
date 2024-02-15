@@ -27,7 +27,7 @@ class _contentsByIdState extends State<contentsById> {
     final details =
         await ContentsServices.getContentsDetails(context, widget.id);
     final contentVideos =
-        await ContentsServices.getContentsDetails(context, widget.id);
+        await ContentsServices.getContentsVideos(context, widget.id);
     setState(() {
       contentDetails = details['details'];
       videos = contentVideos['videos'];
