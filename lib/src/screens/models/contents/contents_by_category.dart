@@ -44,7 +44,7 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
       appBar: AppBar(
         title: AppText(
           txt: widget.title,
-          size: 18,
+          size: 20,
           weight: FontWeight.bold,
         ),
         centerTitle: true,
