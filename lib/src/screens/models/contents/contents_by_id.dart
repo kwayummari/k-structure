@@ -99,18 +99,27 @@ class _contentsByIdState extends State<contentsById> {
                     ],
                   ),
                   Container(
-                    height: 50,
+                    height: 70,
                     color: AppConst.primary,
                     width: MediaQuery.of(context).size.width,
-                    child: Row(
-                      children: [
-                        AppText(
-                              txt: contentDetails[0]['price'],
-                              size: 18,
-                              color: AppConst.white,
-                            ),
-                            AppButton(onPress: () => null, label: 'PURCHASE', borderRadius: 5, textColor: AppConst.white, bcolor: AppConst.red)
-                      ],
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 15, right: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          AppText(
+                            txt: contentDetails[0]['price'] + 'Tzs',
+                            size: 18,
+                            color: AppConst.white,
+                          ),
+                          AppButton(
+                              onPress: () => null,
+                              label: 'PURCHASE',
+                              borderRadius: 5,
+                              textColor: AppConst.white,
+                              bcolor: AppConst.red),
+                        ],
+                      ),
                     ),
                   )
                 ],
