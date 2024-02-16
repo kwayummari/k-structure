@@ -19,7 +19,9 @@ class Api {
 
   // Throw an error if the response is not successful
   void _handleError(http.Response response) {
-    if (response.statusCode != 200 && response.statusCode != 400) {
+    if (response.statusCode != 200 &&
+        response.statusCode != 400 &&
+        response.statusCode != 300) {
       throw Exception("Failed to fetch data");
     }
   }

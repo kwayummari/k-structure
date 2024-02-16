@@ -212,6 +212,9 @@ class _contentsByIdState extends State<contentsById> {
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: 20,
+                  )
                 ],
               ));
   }
