@@ -17,7 +17,6 @@ class Api {
     }
   }
 
-  // Throw an error if the response is not successful
   void _handleError(http.Response response) {
     if (response.statusCode != 200 &&
         response.statusCode != 400 &&
@@ -26,7 +25,6 @@ class Api {
     }
   }
 
-  // GET Request
   Future<dynamic> get(BuildContext context, String endPoint) async {
     // if (!(await hasInternetConnection())) {
     //   throw Exception("No internet connection");
