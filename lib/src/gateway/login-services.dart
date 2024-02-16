@@ -36,10 +36,6 @@ class loginService {
       Navigator.pushNamedAndRemoveUntil(
           context, RouteNames.bottomNavigationBar, (_) => false);
     } else {
-      Navigator.pushNamedAndRemoveUntil(
-          context, RouteNames.bottomNavigationBar, (_) => false);
-      Provider.of<MyProvider>(context, listen: false)
-          .updateLoging(!myProvider.myLoging);
       AppSnackbar(
         isError: true,
         response: response.body.message,
