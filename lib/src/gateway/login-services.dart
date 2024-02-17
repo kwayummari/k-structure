@@ -11,8 +11,10 @@ import '../widgets/app_snackbar.dart';
 class loginService {
   final Api api = Api();
 
-  Future<void> login(BuildContext context, String phoneNumber, String password) async {
+  Future<void> login(
+      BuildContext context, String phoneNumber, String password) async {
     final myProvider = Provider.of<MyProvider>(context, listen: false);
+    myProvider.updateLoging(!myProvider.myLoging);
     Map<String, dynamic> data = {
       'phone_number': phoneNumber,
       'password': password,
