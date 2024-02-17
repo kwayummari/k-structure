@@ -1,3 +1,5 @@
+import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:kstructure/src/provider/login-provider.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/utils/routes/route-names.dart';
 import 'package:kstructure/src/widgets/socialMedia.dart';
@@ -7,6 +9,7 @@ import 'package:kstructure/src/widgets/app_base_screen.dart';
 import 'package:kstructure/src/widgets/app_button.dart';
 import 'package:kstructure/src/widgets/app_input_text.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
+import 'package:provider/provider.dart';
 
 class Registration extends StatefulWidget {
   const Registration({super.key});
@@ -27,6 +30,7 @@ class _RegistrationState extends State<Registration> {
   final _formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+    final myProvider = Provider.of<MyProvider>(context);
     return AppBaseScreen(
       bgcolor: AppConst.white,
       isvisible: false,
@@ -139,6 +143,11 @@ class _RegistrationState extends State<Registration> {
                   SizedBox(
                     height: 30,
                   ),
+                  myProvider.myLoging == true
+                  ? SpinKitCircle(
+                      color: AppConst.primary,
+                    )
+                  :
                   Container(
                     width: 350,
                     height: 49,
