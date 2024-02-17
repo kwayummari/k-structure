@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:kstructure/src/gateway/content-by-category-id.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/widgets/app_base_screen.dart';
 import 'package:kstructure/src/widgets/app_button.dart';
