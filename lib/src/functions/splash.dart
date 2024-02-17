@@ -16,7 +16,7 @@ class SplashFunction {
     if (intro == null) {
       Navigator.pushNamed(context, RouteNames.intro);
     } else {
-      if (id.toString().isEmpty && id == null) {
+      if (id.toString().isEmpty || id == null) {
         Navigator.pushNamed(context, RouteNames.login);
       } else {
         Navigator.pushNamed(context, RouteNames.bottomNavigationBar);
