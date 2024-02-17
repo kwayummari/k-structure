@@ -101,8 +101,13 @@ class _LoginState extends State<Login> {
                       width: 350,
                       height: 55,
                       child: AppButton(
-                        onPress: () => loginService()
-                            .login(context, phone_number.text, password.text),
+                        onPress: () {
+                          if (!_formKey.currentState!.validate()) {
+                            return;
+                          }
+                          loginService()
+                              .login(context, phone_number.text, password.text);
+                        },
                         label: 'LOGIN',
                         borderRadius: 5,
                         textColor: AppConst.white,
