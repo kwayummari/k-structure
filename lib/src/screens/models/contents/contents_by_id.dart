@@ -114,7 +114,9 @@ class _contentsByIdState extends State<contentsById> {
                             color: AppConst.white,
                           ),
                           AppButton(
-                              onPress: () => null,
+                              onPress: () => {
+                                
+                              },
                               label: 'PURCHASE',
                               borderRadius: 5,
                               textColor: AppConst.white,
