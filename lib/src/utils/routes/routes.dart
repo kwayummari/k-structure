@@ -1,7 +1,6 @@
 import 'package:kstructure/src/screens/introduction/intro.dart';
 import 'package:kstructure/src/screens/models/bottomNavigationBar/bottomNavigationBar.dart';
 import 'package:kstructure/src/screens/models/contents/contents_by_category.dart';
-import 'package:kstructure/src/screens/models/contents/contents_by_id.dart';
 import 'package:kstructure/src/screens/models/dashboard/dashboard.dart';
 import 'package:kstructure/src/screens/models/profile/profile.dart';
 import 'package:kstructure/src/utils/routes/route-names.dart';
@@ -9,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:kstructure/src/screens/authentication/login.dart';
 import 'package:kstructure/src/screens/authentication/registration.dart';
 import 'package:kstructure/src/screens/splash/splash.dart';
+import 'package:kstructure/src/widgets/app_play_video.dart';
 
 final Map<String, WidgetBuilder> routes = {
   RouteNames.login: (context) => Login(),
@@ -26,12 +26,13 @@ final Map<String, WidgetBuilder> routes = {
       title: args?['title'],
     );
   },
-  RouteNames.getContentsById: (context) {
+  RouteNames.videoPlayer: (context) {
     final Map<String, dynamic>? args =
         ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
-    return contentsById(
+    return videoPlayer(
       id: args?['content_id'],
       title: args?['title'],
+      url: args?['url'],
     );
   },
 };

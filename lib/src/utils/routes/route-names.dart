@@ -9,4 +9,5 @@ class RouteNames {
   static const String bottomNavigationBar = '/bottomNavigationBar';
   static const String getContentsByCategory = '/getContentsByCategory';
   static const String getContentsById = '/getContentsById';
+  static const String videoPlayer = '/videoPlayer';
 }
