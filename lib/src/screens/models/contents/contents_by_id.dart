@@ -83,10 +83,13 @@ class _contentsByIdState extends State<contentsById> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Icon(
-                              Icons.play_circle_outline,
-                              size: 50,
-                              color: Colors.white,
+                            IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Icons.play_circle_outline,
+                                size: 50,
+                                color: Colors.white,
+                              ),
                             ),
                             SizedBox(height: 10),
                             AppText(
@@ -114,9 +117,7 @@ class _contentsByIdState extends State<contentsById> {
                             color: AppConst.white,
                           ),
                           AppButton(
-                              onPress: () => {
-                                
-                              },
+                              onPress: () => {},
                               label: 'PURCHASE',
                               borderRadius: 5,
                               textColor: AppConst.white,
@@ -166,7 +167,7 @@ class _contentsByIdState extends State<contentsById> {
                         size: 30,
                         color: Colors.black,
                       ),
-                      text: contentDetails[0]['certificate_id'] == '1'
+                      text: contentDetails[0]['certificate'] == '1'
                           ? ' Certification after completion'
                           : 'No available Certificate'),
                   SizedBox(
