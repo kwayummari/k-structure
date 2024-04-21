@@ -91,7 +91,7 @@ class _contentsByIdState extends State<contentsById> {
                                   arguments: {
                                     'id': widget.id,
                                     'title': widget.title,
-                                    'url': '${dotenv.env['VIDEO_SERVER']}${contentDetails[0]['image']}'
+                                    'url': '${dotenv.env['VIDEO_SERVER']}${contentDetails[0]['url']}'
                                   });
                               },
                               icon: Icon(
