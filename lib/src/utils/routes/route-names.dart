@@ -10,4 +10,5 @@ class RouteNames {
   static const String getContentsByCategory = '/getContentsByCategory';
   static const String getContentsById = '/getContentsById';
   static const String videoPlayer = '/videoPlayer';
+  static const String payment = '/payment';
 }

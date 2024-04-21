@@ -3,6 +3,7 @@ import 'package:kstructure/src/screens/models/bottomNavigationBar/bottomNavigati
 import 'package:kstructure/src/screens/models/contents/contents_by_category.dart';
 import 'package:kstructure/src/screens/models/contents/contents_by_id.dart';
 import 'package:kstructure/src/screens/models/dashboard/dashboard.dart';
+import 'package:kstructure/src/screens/models/payment/payment.dart';
 import 'package:kstructure/src/screens/models/profile/profile.dart';
 import 'package:kstructure/src/utils/routes/route-names.dart';
 import 'package:flutter/material.dart';
@@ -42,6 +43,14 @@ final Map<String, WidgetBuilder> routes = {
       id: args?['content_id'],
       title: args?['title'],
       url: args?['url'],
+    );
+  },
+  RouteNames.payment: (context) {
+    final Map<String, dynamic>? args =
+        ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
+    return Payment(
+      id: args?['content_id'],
+      title: args?['title'],
     );
   },
 };

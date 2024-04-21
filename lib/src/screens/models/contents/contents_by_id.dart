@@ -142,7 +142,18 @@ class _contentsByIdState extends State<contentsById> {
                             },
                           ),
                           AppButton(
-                              onPress: () => {},
+                              onPress: () => {
+                                    if (contentDetails[0]['payment_status'] ==
+                                        '0')
+                                      {
+                                        Navigator.pushNamed(
+                                            context, RouteNames.payment,
+                                            arguments: {
+                                              'content_id': widget.id,
+                                              'title': widget.title
+                                            })
+                                      }
+                                  },
                               label: contentDetails[0]['payment_status'] == '0'
                                   ? 'PURCHASE'
                                   : 'PLAY COURSE',
