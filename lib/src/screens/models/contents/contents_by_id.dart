@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:kstructure/src/gateway/content-by-category-id.dart';
 import 'package:kstructure/src/utils/app_const.dart';
+import 'package:kstructure/src/utils/routes/route-names.dart';
 import 'package:kstructure/src/widgets/app_base_screen.dart';
 import 'package:kstructure/src/widgets/app_button.dart';
 import 'package:kstructure/src/widgets/app_course_details.dart';
@@ -84,7 +85,15 @@ class _contentsByIdState extends State<contentsById> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             IconButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.pushNamed(
+                                  context, RouteNames.videoPlayer,
+                                  arguments: {
+                                    'id': widget.id,
+                                    'title': widget.title,
+                                    'url': '${dotenv.env['VIDEO_SERVER']}${contentDetails[0]['image']}'
+                                  });
+                              },
                               icon: Icon(
                                 Icons.play_circle_outline,
                                 size: 50,
