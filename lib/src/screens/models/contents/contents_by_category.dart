@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:intl/intl.dart';
+import 'package:kstructure/src/functions/moneyFormatter.dart';
 import 'package:kstructure/src/gateway/content-by-category-id.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/utils/routes/route-names.dart';
@@ -34,12 +35,12 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
     });
   }
 
-  Future<String> formatPrice(number) async {
-    String priceString = number;
-    int price = int.parse(priceString);
-    String formattedPrice = NumberFormat('#,###').format(price);
-    return formattedPrice + 'Tzs';
-  }
+  // Future<String> formatPrice(number) async {
+  //   String priceString = number;
+  //   int price = int.parse(priceString);
+  //   String formattedPrice = NumberFormat('#,###').format(price);
+  //   return formattedPrice + 'Tzs';
+  // }
 
   @override
   void initState() {
@@ -128,7 +129,7 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                           bottom: 20,
                           left: 20,
                           child: FutureBuilder<String>(
-                            future: formatPrice(data[index]['price']),
+                            future: formatPrice(data[index]['price'], 'Tzs'),
                             builder: (context, snapshot) {
                               if (snapshot.connectionState ==
                                       ConnectionState.waiting ||
