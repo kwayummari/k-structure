@@ -100,9 +100,13 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                               ),
                               Row(
                                 children: [
-                                  StarRating(numberOfStars: data[index]['star']),
+                                  StarRating(
+                                      numberOfStars:
+                                          data[index]['star'].toString()),
                                   AppText(
-                                    txt: '(' + data[index]['readers'] + ')',
+                                    txt: '(' +
+                                        data[index]['readers'].toString() +
+                                        ')',
                                     size: 18,
                                     weight: FontWeight.w700,
                                     color: AppConst.white,

@@ -10,15 +10,14 @@ class StarRating extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RatingBarIndicator(
-      rating: double.parse(numberOfStars),
-      itemBuilder: (context, index) => Icon(
-        Icons.star,
-        color: Colors.amber,
-      ),
-      unratedColor: AppConst.whiteOpacity,
-      itemCount: 5,
-      itemSize: 20.0,
-      direction: Axis.horizontal,
-    );
+        rating: double.parse(numberOfStars),
+        itemBuilder: (context, index) => Icon(
+              Icons.star,
+              color: Colors.amber,
+            ),
+        itemCount: 5,
+        itemSize: 20.0,
+        direction: Axis.horizontal,
+        unratedColor: AppConst.whiteOpacity);
   }
 }
