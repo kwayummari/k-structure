@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:intl/intl.dart';
 import 'package:kstructure/src/functions/moneyFormatter.dart';
 import 'package:kstructure/src/gateway/content-by-category-id.dart';
 import 'package:kstructure/src/utils/app_const.dart';
@@ -34,13 +33,6 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
       data = datas['contents'];
     });
   }
-
-  // Future<String> formatPrice(number) async {
-  //   String priceString = number;
-  //   int price = int.parse(priceString);
-  //   String formattedPrice = NumberFormat('#,###').format(price);
-  //   return formattedPrice + 'Tzs';
-  // }
 
   @override
   void initState() {
