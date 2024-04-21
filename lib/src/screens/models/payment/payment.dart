@@ -99,20 +99,24 @@ class _PaymentState extends State<Payment> {
                   ? SpinKitCircle(
                       color: AppConst.primary,
                     )
-                  : Container(
-                      width: 350,
-                      height: 55,
-                      child: AppButton(
-                        onPress: () {
-                          if (!_formKey.currentState!.validate()) {
-                            return;
-                          }
-                          paymentService().payment(context, phone_number.text);
-                        },
-                        label: 'LOGIN',
-                        borderRadius: 5,
-                        textColor: AppConst.white,
-                        bcolor: AppConst.primary,
+                  : Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width,
+                        height: 55,
+                        child: AppButton(
+                          onPress: () {
+                            if (!_formKey.currentState!.validate()) {
+                              return;
+                            }
+                            paymentService()
+                                .payment(context, phone_number.text, widget.id);
+                          },
+                          label: 'LOGIN',
+                          borderRadius: 5,
+                          textColor: AppConst.white,
+                          bcolor: AppConst.primary,
+                        ),
                       ),
                     ),
             ],

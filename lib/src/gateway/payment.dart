@@ -8,18 +8,19 @@ import '../provider/login-provider.dart';
 import '../utils/routes/route-names.dart';
 import '../widgets/app_snackbar.dart';
 
-class paymentService{
+class paymentService {
   final Api api = Api();
 
   Future<void> payment(
-      BuildContext context, String phoneNumber) async {
+      BuildContext context, String phoneNumber, String content_id) async {
     final myProvider = Provider.of<MyProvider>(context, listen: false);
     myProvider.updateLoging(!myProvider.myLoging);
     final prefs = await SharedPreferences.getInstance();
-      var user_id = await prefs.getString('id');
+    var user_id = await prefs.getString('id');
     Map<String, dynamic> data = {
       'phone_number': phoneNumber,
-      'user_id': user_id
+      'user_id': user_id,
+      'content_id': content_id,
     };
 
     final response = await api.post(context, 'payment', data);
