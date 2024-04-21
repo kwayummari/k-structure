@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:kstructure/src/functions/moneyFormatter.dart';
 import 'package:kstructure/src/gateway/content-by-category-id.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/utils/routes/route-names.dart';
@@ -61,7 +62,7 @@ class _contentsByIdState extends State<contentsById> {
         backgroundImage: false,
         backgroundAuth: false,
         child: contentDetails.isEmpty && videos.isEmpty
-            ? CircularProgressIndicator()
+            ? Center(child: CircularProgressIndicator())
             : Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -87,12 +88,13 @@ class _contentsByIdState extends State<contentsById> {
                             IconButton(
                               onPressed: () {
                                 Navigator.pushNamed(
-                                  context, RouteNames.videoPlayer,
-                                  arguments: {
-                                    'id': widget.id,
-                                    'title': widget.title,
-                                    'url': '${dotenv.env['VIDEO_SERVER']}${contentDetails[0]['url']}'
-                                  });
+                                    context, RouteNames.videoPlayer,
+                                    arguments: {
+                                      'id': widget.id,
+                                      'title': widget.title,
+                                      'url':
+                                          '${dotenv.env['VIDEO_SERVER']}${contentDetails[0]['url']}'
+                                    });
                               },
                               icon: Icon(
                                 Icons.play_circle_outline,
@@ -120,14 +122,30 @@ class _contentsByIdState extends State<contentsById> {
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          AppText(
-                            txt: contentDetails[0]['price'] + 'Tzs',
-                            size: 18,
-                            color: AppConst.white,
+                          FutureBuilder<String>(
+                            future:
+                                formatPrice(contentDetails[0]['price'], 'Tzs'),
+                            builder: (context, snapshot) {
+                              if (snapshot.connectionState ==
+                                      ConnectionState.waiting ||
+                                  !snapshot.hasData) {
+                                return CircularProgressIndicator();
+                              } else {
+                                return AppText(
+                                  txt: snapshot.data ?? '',
+                                  color: Colors.white,
+                                  weight: FontWeight.w700,
+                                  size: 20,
+                                  softWrap: true,
+                                );
+                              }
+                            },
                           ),
                           AppButton(
                               onPress: () => {},
-                              label: 'PURCHASE',
+                              label: contentDetails[0]['payment_status'] == '0'
+                                  ? 'PURCHASE'
+                                  : 'PLAY COURSE',
                               borderRadius: 5,
                               textColor: AppConst.white,
                               bcolor: AppConst.red),
