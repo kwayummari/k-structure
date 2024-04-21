@@ -61,10 +61,11 @@ class _availableCoursesState extends State<availableCourses> {
                 GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(
-                        context, RouteNames.getContentsByCategory, arguments: {
-                      'content_id': data!['categories'][i]['id'],
-                      'title': data!['categories'][i]['title']
-                    });
+                        context, RouteNames.getContentsByCategory,
+                        arguments: {
+                          'content_id': data!['categories'][i]['id'],
+                          'title': data!['categories'][i]['title']
+                        });
                   },
                   child: Stack(
                     children: [
@@ -98,7 +99,14 @@ class _availableCoursesState extends State<availableCourses> {
                         bottom: 10,
                         left: 20,
                         child: AppButton(
-                            onPress: () => null,
+                            onPress: () {
+                              Navigator.pushNamed(
+                                  context, RouteNames.getContentsByCategory,
+                                  arguments: {
+                                    'content_id': data!['categories'][i]['id'],
+                                    'title': data!['categories'][i]['title']
+                                  });
+                            },
                             label: 'View',
                             borderRadius: 5,
                             textColor: AppConst.black,

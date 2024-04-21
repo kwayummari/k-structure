@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:intl/intl.dart';
 import 'package:kstructure/src/gateway/content-by-category-id.dart';
 import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/utils/routes/route-names.dart';
@@ -31,6 +32,13 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
     setState(() {
       data = datas['contents'];
     });
+  }
+
+  Future<String> formatPrice(number) async {
+    String priceString = number;
+    int price = int.parse(priceString);
+    String formattedPrice = NumberFormat('#,###').format(price);
+    return formattedPrice + 'Tzs';
   }
 
   @override
@@ -119,12 +127,23 @@ class _contentsByCategoryIdState extends State<contentsByCategoryId> {
                         Positioned(
                           bottom: 20,
                           left: 20,
-                          child: AppText(
-                            txt: data[index]['price'] + 'Tzs',
-                            color: Colors.white,
-                            weight: FontWeight.w700,
-                            size: 20,
-                            softWrap: true,
+                          child: FutureBuilder<String>(
+                            future: formatPrice(data[index]['price']),
+                            builder: (context, snapshot) {
+                              if (snapshot.connectionState ==
+                                      ConnectionState.waiting ||
+                                  !snapshot.hasData) {
+                                return CircularProgressIndicator();
+                              } else {
+                                return AppText(
+                                  txt: snapshot.data ?? '',
+                                  color: Colors.white,
+                                  weight: FontWeight.w700,
+                                  size: 20,
+                                  softWrap: true,
+                                );
+                              }
+                            },
                           ),
                         )
                       ],
