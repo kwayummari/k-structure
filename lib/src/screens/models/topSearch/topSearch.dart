@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:kstructure/src/functions/moneyFormatter.dart';
 import 'package:kstructure/src/gateway/categories.dart';
 import 'package:kstructure/src/utils/animations/shimmers/available_courses.dart';
 import 'package:kstructure/src/utils/app_const.dart';
