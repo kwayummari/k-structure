@@ -5,14 +5,13 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import '../api/apis.dart';
 import '../provider/login-provider.dart';
-import '../utils/routes/route-names.dart';
 import '../widgets/app_snackbar.dart';
 
 class paymentService {
   final Api api = Api();
 
   Future<void> payment(
-      BuildContext context, String phoneNumber, String content_id) async {
+      BuildContext context, String phoneNumber, String content_id, String amount) async {
     final myProvider = Provider.of<MyProvider>(context, listen: false);
     myProvider.updateLoging(!myProvider.myLoging);
     final prefs = await SharedPreferences.getInstance();
@@ -21,6 +20,7 @@ class paymentService {
       'phone_number': phoneNumber,
       'user_id': user_id,
       'content_id': content_id,
+      'amount': amount
     };
 
     final response = await api.post(context, 'payment', data);

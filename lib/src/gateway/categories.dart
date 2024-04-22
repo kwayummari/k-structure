@@ -11,4 +11,9 @@ class categoriesServices {
     final decodedResponse = jsonDecode(response.body);
     return decodedResponse;
   }
+  Future getTopCategories(BuildContext context) async {
+    final response = await api.get(context, 'getTopContents');
+    final decodedResponse = jsonDecode(response.body);
+    return decodedResponse;
+  }
 }

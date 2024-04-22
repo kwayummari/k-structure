@@ -51,6 +51,7 @@ final Map<String, WidgetBuilder> routes = {
     return Payment(
       id: args?['content_id'],
       title: args?['title'],
+      amount: args?['amount'],
     );
   },
 };

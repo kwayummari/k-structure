@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:hexcolor/hexcolor.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:kstructure/src/functions/moneyFormatter.dart';
+import 'package:kstructure/src/gateway/categories.dart';
+import 'package:kstructure/src/utils/animations/shimmers/available_courses.dart';
 import 'package:kstructure/src/utils/app_const.dart';
+import 'package:kstructure/src/utils/routes/route-names.dart';
+import 'package:kstructure/src/widgets/app_listview_builder.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
+import 'package:kstructure/src/widgets/star_widget.dart';
 
 class topSearch extends StatefulWidget {
   const topSearch({super.key});
@@ -11,9 +17,21 @@ class topSearch extends StatefulWidget {
 }
 
 class _topSearchState extends State<topSearch> {
+  List data = [];
+
+  void fetchData() async {
+    categoriesServices CategoriesServices = categoriesServices();
+    final datas = await CategoriesServices.getTopCategories(context);
+    setState(() {
+      data = datas['contents'];
+    });
+    print(data);
+  }
+
   @override
   void initState() {
     super.initState();
+    fetchData();
   }
 
   @override
@@ -30,14 +48,14 @@ class _topSearchState extends State<topSearch> {
                 AppText(
                   txt: 'Top Search',
                   size: 15,
-                  color: AppConst.white,
+                  color: AppConst.black,
                   weight: FontWeight.w700,
                 ),
                 Spacer(),
                 AppText(
                   txt: 'View All',
                   size: 15,
-                  color: AppConst.white,
+                  color: AppConst.black,
                   weight: FontWeight.w700,
                 ),
                 SizedBox(
@@ -45,70 +63,94 @@ class _topSearchState extends State<topSearch> {
                 ),
                 Icon(
                   Icons.arrow_forward_ios,
-                  color: AppConst.white,
+                  color: AppConst.black,
                 )
               ],
             ),
           ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 2,
-              shrinkWrap: true,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) {
-                Padding(
-                  padding: const EdgeInsets.only(left: 15),
-                  child: InkWell(
-                    onTap: () => null,
-                    child: Column(
-                      children: [
-                        Padding(
-                          padding: const EdgeInsets.only(left: 8, right: 8),
-                          child: Container(
-                            height: 125.0,
-                            width: MediaQuery.of(context).size.width / 2.4,
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10.0)),
-                              border: Border.all(color: Colors.black),
-                              image: DecorationImage(
-                                image: AssetImage('assets/4.jpg'),
-                                fit: BoxFit.fill,
-                              ),
-                              shape: BoxShape.rectangle,
+          data.isEmpty
+              ? Expanded(
+                  child: AppListviewBuilder(
+                      direction: Axis.horizontal,
+                      itemnumber: 4,
+                      itemBuilder: (BuildContext context, int index) {
+                        return availableCoursesShimmerLoad(
+                          width: 200,
+                          height: 200,
+                          borderRadius: 15,
+                        );
+                      }))
+              : Expanded(
+                  child: AppListviewBuilder(
+                      direction: Axis.horizontal,
+                      itemnumber: data.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Padding(
+                          padding: const EdgeInsets.only(
+                              left: 10, right: 10, top: 20),
+                          child: GestureDetector(
+                            onTap: () => Navigator.pushNamed(
+                                context, RouteNames.getContentsById,
+                                arguments: {
+                                  'content_id': data[index]['id'],
+                                  'title': data[index]['title']
+                                }),
+                            child: Stack(
+                              children: [
+                                ColorFiltered(
+                                  colorFilter: ColorFilter.mode(
+                                    Colors.black.withOpacity(0.6),
+                                    BlendMode.srcOver,
+                                  ),
+                                  child: Image.network(
+                                    '${dotenv.env['IMAGE_SERVER']}${data[index]['image']}',
+                                  ),
+                                ),
+                                Positioned(
+                                  left: 20,
+                                  right: 20,
+                                  top: 20,
+                                  child: Column(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Align(
+                                        alignment: Alignment.centerLeft,
+                                        child: Container(
+                                          width: 380,
+                                          child: AppText(
+                                            txt: data[index]['title'],
+                                            color: Colors.white,
+                                            weight: FontWeight.w700,
+                                            size: 20,
+                                            softWrap: true,
+                                          ),
+                                        ),
+                                      ),
+                                      Row(
+                                        children: [
+                                          StarRating(
+                                              numberOfStars: data[index]['star']
+                                                  .toString()),
+                                          AppText(
+                                            txt: '(' +
+                                                data[index]['readers']
+                                                    .toString() +
+                                                ')',
+                                            size: 18,
+                                            weight: FontWeight.w700,
+                                            color: AppConst.white,
+                                          ),
+                                        ],
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ),
-                        Text(
-                          'Engineering',
-                          style: TextStyle(overflow: TextOverflow.ellipsis),
-                        ),
-                        Align(
-                          alignment: Alignment.bottomLeft,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              AppText(
-                                size: 15,
-                                txt: 'Read More',
-                                color: HexColor('#800B24'),
-                              ),
-                              Icon(
-                                Icons.arrow_forward,
-                                color: HexColor('#800B24'),
-                              )
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                );
-                return null;
-              },
-            ),
-          ),
+                        );
+                      })),
         ],
       ),
     );

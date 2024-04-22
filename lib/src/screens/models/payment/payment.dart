@@ -1,7 +1,6 @@
 // ignore_for_file: must_be_immutable
 
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:kstructure/src/gateway/payment.dart';
 import 'package:kstructure/src/provider/login-provider.dart';
@@ -15,8 +14,9 @@ import 'package:provider/provider.dart';
 class Payment extends StatefulWidget {
   var id;
   var title;
+  var amount;
 
-  Payment({Key? key, required this.id, required this.title}) : super(key: key);
+  Payment({Key? key, required this.id, required this.title, required this.amount}) : super(key: key);
 
   @override
   State<Payment> createState() => _PaymentState();
@@ -110,7 +110,7 @@ class _PaymentState extends State<Payment> {
                               return;
                             }
                             paymentService()
-                                .payment(context, phone_number.text, widget.id);
+                                .payment(context, phone_number.text, widget.id, widget.amount);
                           },
                           label: 'LOGIN',
                           borderRadius: 5,
