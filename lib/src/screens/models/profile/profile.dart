@@ -4,6 +4,7 @@ import 'package:kstructure/src/utils/app_const.dart';
 import 'package:kstructure/src/widgets/app_base_screen.dart';
 import 'package:kstructure/src/widgets/app_text.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class profile extends StatefulWidget {
   const profile({super.key});
@@ -13,31 +14,22 @@ class profile extends StatefulWidget {
 }
 
 class _profileState extends State<profile> {
-  var email;
-  var id;
-  var role;
-  var profileData;
+  var data;
+  void fetchData() async {
+    profileService ProfileService = profileService();
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+    var id = sharedPreferences.getString('id');
+    final datas = await ProfileService.profile(context, id!);
+    setState(() {
+      data = datas['user'];
+    });
+  }
+
   @override
   void initState() {
     super.initState();
-    getHome();
-  }
-
-  Future<void> getHome() async {
-    final SplashFunction _splashService = await SplashFunction();
-    final profileService profile = await profileService();
-    final String email = await _splashService.getEmail();
-    final String id = await _splashService.getId();
-    final String role = await _splashService.getRole();
-    final profileData = await profile.profile(context, id);
-
-    setState(() {
-      // Update the state synchronously with the retrieved data
-      this.email = email;
-      this.id = id;
-      this.role = role;
-      this.profileData = profileData;
-    });
+    fetchData();
   }
 
   @override
@@ -63,9 +55,7 @@ class _profileState extends State<profile> {
               ),
               ListTile(
                 title: AppText(
-                  txt: profileData != null
-                      ? profileData[0]['fullname']
-                      : 'loading...',
+                  txt: data != null ? data[0]['full_name'] : 'loading...',
                   size: 25,
                   color: AppConst.white,
                   weight: FontWeight.w900,
@@ -234,9 +224,7 @@ class _profileState extends State<profile> {
                   color: AppConst.white,
                 ),
                 title: AppText(
-                  txt: profileData != null
-                      ? profileData[0]['fullname']
-                      : 'loading...',
+                  txt: data != null ? data[0]['full_name'] : 'loading...',
                   color: AppConst.white,
                   size: 15,
                   weight: FontWeight.w900,
@@ -254,9 +242,7 @@ class _profileState extends State<profile> {
                   color: AppConst.white,
                 ),
                 title: AppText(
-                  txt: profileData != null
-                      ? profileData[0]['phone']
-                      : 'loading...',
+                  txt: data != null ? data[0]['phone_number'] : 'loading...',
                   color: AppConst.white,
                   size: 15,
                   weight: FontWeight.w900,
@@ -267,36 +253,6 @@ class _profileState extends State<profile> {
                       Icons.edit,
                       color: AppConst.grey,
                     )),
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.mail,
-                  color: AppConst.white,
-                ),
-                title: AppText(
-                  txt: email,
-                  size: 15,
-                  color: AppConst.white,
-                  weight: FontWeight.w900,
-                ),
-                trailing: IconButton(
-                    onPressed: () => null,
-                    icon: Icon(
-                      Icons.edit,
-                      color: AppConst.grey,
-                    )),
-              ),
-              ListTile(
-                leading: Icon(
-                  Icons.supervised_user_circle,
-                  color: AppConst.white,
-                ),
-                title: AppText(
-                  txt: role == '0' ? 'Client' : 'Driver',
-                  color: AppConst.white,
-                  size: 15,
-                  weight: FontWeight.w900,
-                ),
               ),
               ListTile(
                 leading: Icon(

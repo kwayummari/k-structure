@@ -24,7 +24,6 @@ class _topSearchState extends State<topSearch> {
     setState(() {
       data = datas['contents'];
     });
-    print(data);
   }
 
   @override
