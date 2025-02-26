@@ -1,5 +1,5 @@
-import 'package:kstructure/src/utils/app_const.dart';
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
+ import 'package:erp/src/utils/app_const.dart';
 
 class AppBaseTabScreen extends StatelessWidget {
   final Widget child;

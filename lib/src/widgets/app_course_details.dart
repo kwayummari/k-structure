@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:kstructure/src/utils/app_const.dart';
-import 'package:kstructure/src/widgets/app_text.dart';
-
+ import 'package:erp/src/utils/app_const.dart';
+import 'package:erp/src/widgets/app_text.dart';
 class AppCourseDetails extends StatelessWidget {
   final Icon icon;
   final String text;

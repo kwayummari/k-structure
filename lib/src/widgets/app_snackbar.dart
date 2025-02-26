@@ -1,4 +1,4 @@
-import 'package:kstructure/src/widgets/app_text.dart';
+import 'package:erp/src/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 
 class AppSnackbar extends SnackBar {

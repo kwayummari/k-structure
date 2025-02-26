@@ -1,7 +1,7 @@
-import 'package:kstructure/src/utils/app_const.dart';
-import 'package:kstructure/src/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
+import 'package:erp/src/utils/app_const.dart';
+import 'package:erp/src/widgets/app_text.dart';
 
 class TypeAheadFormFieldWidget extends StatefulWidget {
   final TextEditingController controller;

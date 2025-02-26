@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:kstructure/src/api/apis.dart';
+import 'package:erp/src/api/apis.dart';
 import 'package:flutter/material.dart';
 
 class contentsByCategoriesServices {
@@ -14,6 +14,7 @@ class contentsByCategoriesServices {
     final decodedResponse = jsonDecode(response.body);
     return decodedResponse;
   }
+
   Future getContentsDetails(BuildContext context, int contentId) async {
     Map<String, dynamic> data = {
       'id': contentId.toString(),
@@ -22,6 +23,7 @@ class contentsByCategoriesServices {
     final decodedResponse = jsonDecode(response.body);
     return decodedResponse;
   }
+
   Future getContentsVideos(BuildContext context, int contentId) async {
     Map<String, dynamic> data = {
       'id': contentId.toString(),

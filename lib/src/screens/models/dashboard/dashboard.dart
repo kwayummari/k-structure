@@ -1,10 +1,10 @@
-import 'package:kstructure/src/screens/models/available_courses/available_courses.dart';
-import 'package:kstructure/src/screens/models/topSearch/topSearch.dart';
-import 'package:kstructure/src/utils/app_const.dart';
-import 'package:kstructure/src/widgets/app_base_screen.dart';
-import 'package:kstructure/src/widgets/app_input_text.dart';
+import 'package:erp/src/screens/models/available_courses/available_courses.dart';
+import 'package:erp/src/screens/models/topSearch/topSearch.dart';
+import 'package:erp/src/utils/app_const.dart';
+import 'package:erp/src/widgets/app_base_screen.dart';
+import 'package:erp/src/widgets/app_input_text.dart';
 import 'package:flutter/material.dart';
-import 'package:kstructure/src/widgets/app_text.dart';
+import 'package:erp/src/widgets/app_text.dart';
 
 class dashboard extends StatefulWidget {
   const dashboard({Key? key}) : super(key: key);

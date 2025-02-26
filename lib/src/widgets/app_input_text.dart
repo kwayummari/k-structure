@@ -1,6 +1,9 @@
-import 'package:kstructure/src/utils/app_const.dart';
+import 'package:erp/src/utils/app_const.dart';
 import 'package:flutter/material.dart';
-import 'package:kstructure/src/widgets/app_text.dart';
+
+import 'app_text.dart';
+
+
 
 class AppInputText extends StatelessWidget {
   final TextEditingController? textfieldcontroller;

@@ -1,10 +1,10 @@
 import 'dart:convert';
 
-import 'package:kstructure/src/api/apis.dart';
-import 'package:kstructure/src/provider/login-provider.dart';
-import 'package:kstructure/src/utils/app_const.dart';
-import 'package:kstructure/src/utils/routes/route-names.dart';
-import 'package:kstructure/src/widgets/app_snackbar.dart';
+import 'package:erp/src/api/apis.dart';
+import 'package:erp/src/provider/login-provider.dart';
+import 'package:erp/src/utils/app_const.dart';
+import 'package:erp/src/utils/routes/route-names.dart';
+import 'package:erp/src/widgets/app_snackbar.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:provider/provider.dart';
@@ -17,7 +17,7 @@ class registrationService {
 
   Future<void> registration(BuildContext context, String password,
       String rpassword, String fullname, String phone) async {
-        final myProvider = Provider.of<MyProvider>(context, listen: false);
+    final myProvider = Provider.of<MyProvider>(context, listen: false);
     myProvider.updateLoging(!myProvider.myLoging);
     if (password.toString() == rpassword.toString()) {
       Map<String, dynamic> data = {

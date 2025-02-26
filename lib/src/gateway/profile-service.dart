@@ -1,7 +1,8 @@
 import 'dart:convert';
 
-import 'package:kstructure/src/api/apis.dart';
+import 'package:erp/src/api/apis.dart';
 import 'package:flutter/material.dart';
+
 class profileService {
   Api api = Api();
   Future profile(BuildContext context, String id) async {

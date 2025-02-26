@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:kstructure/src/functions/moneyFormatter.dart';
-import 'package:kstructure/src/gateway/content-by-category-id.dart';
-import 'package:kstructure/src/utils/app_const.dart';
-import 'package:kstructure/src/utils/routes/route-names.dart';
-import 'package:kstructure/src/widgets/app_base_screen.dart';
-import 'package:kstructure/src/widgets/app_listview_builder.dart';
-import 'package:kstructure/src/widgets/app_text.dart';
-import 'package:kstructure/src/widgets/star_widget.dart';
+import 'package:erp/src/functions/moneyFormatter.dart';
+import 'package:erp/src/gateway/content-by-category-id.dart';
+import 'package:erp/src/utils/app_const.dart';
+import 'package:erp/src/utils/routes/route-names.dart';
+import 'package:erp/src/widgets/app_base_screen.dart';
+import 'package:erp/src/widgets/app_listview_builder.dart';
+import 'package:erp/src/widgets/app_text.dart';
+import 'package:erp/src/widgets/star_widget.dart';
 
 class contentsByCategoryId extends StatefulWidget {
   var id;

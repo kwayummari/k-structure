@@ -1,6 +1,6 @@
-import 'package:kstructure/src/utils/app_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import '../utils/app_const.dart';
 
 class AppBaseScreen extends StatelessWidget {
   final Widget child;

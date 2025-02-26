@@ -1,8 +1,7 @@
-import 'package:kstructure/src/functions/splash.dart';
-import 'package:kstructure/src/gateway/profile-service.dart';
-import 'package:kstructure/src/utils/app_const.dart';
-import 'package:kstructure/src/widgets/app_base_screen.dart';
-import 'package:kstructure/src/widgets/app_text.dart';
+import 'package:erp/src/gateway/profile-service.dart';
+import 'package:erp/src/utils/app_const.dart';
+import 'package:erp/src/widgets/app_base_screen.dart';
+import 'package:erp/src/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

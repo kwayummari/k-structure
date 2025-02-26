@@ -1,8 +1,8 @@
-import 'package:kstructure/src/functions/clipPath.dart';
-import 'package:kstructure/src/functions/slide.dart';
-import 'package:kstructure/src/utils/app_const.dart';
-import 'package:kstructure/src/widgets/app_button.dart';
-import 'package:kstructure/src/widgets/app_text.dart';
+import 'package:erp/src/functions/clipPath.dart';
+import 'package:erp/src/functions/slide.dart';
+import 'package:erp/src/utils/app_const.dart';
+import 'package:erp/src/widgets/app_button.dart';
+import 'package:erp/src/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 
 class Slide extends StatelessWidget {

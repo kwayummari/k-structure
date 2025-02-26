@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables, avoid_print, use_build_context_synchronously, library_private_types_in_public_api
 
-import 'package:kstructure/src/functions/splash.dart';
-import 'package:kstructure/src/utils/app_const.dart';
+import 'package:erp/src/functions/splash.dart';
+import 'package:erp/src/utils/app_const.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 

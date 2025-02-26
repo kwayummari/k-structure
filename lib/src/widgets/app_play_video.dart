@@ -1,10 +1,12 @@
 // ignore_for_file: must_be_immutable
 
+import 'package:erp/src/utils/app_const.dart';
+import 'package:erp/src/widgets/app_base_screen.dart';
+import 'package:erp/src/widgets/app_text.dart';
+import 'package:erp/src/widgets/app_video_player.dart';
 import 'package:flutter/material.dart';
-import 'package:kstructure/src/utils/app_const.dart';
-import 'package:kstructure/src/widgets/app_base_screen.dart';
-import 'package:kstructure/src/widgets/app_text.dart';
-import 'package:kstructure/src/widgets/app_video_player.dart';
+import 'package:flutter/services.dart';
+ 
 
 class videoPlayer extends StatefulWidget {
   var id;

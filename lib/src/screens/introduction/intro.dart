@@ -1,5 +1,5 @@
-import 'package:kstructure/src/screens/introduction/slides.dart';
-import 'package:kstructure/src/utils/app_const.dart';
+import 'package:erp/src/screens/introduction/slides.dart';
+import 'package:erp/src/utils/app_const.dart';
 import 'package:flutter/material.dart';
 import 'package:intro_slider/intro_slider.dart';
 

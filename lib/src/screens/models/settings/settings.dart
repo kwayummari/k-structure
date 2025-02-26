@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:kstructure/src/screens/models/settings/account/account.dart';
-import 'package:kstructure/src/utils/app_const.dart';
-import 'package:kstructure/src/widgets/app_base_screen.dart';
-import 'package:kstructure/src/widgets/app_text.dart';
+import 'package:erp/src/screens/models/settings/account/account.dart';
+import 'package:erp/src/utils/app_const.dart';
+import 'package:erp/src/widgets/app_base_screen.dart';
+import 'package:erp/src/widgets/app_text.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class settings extends StatefulWidget {

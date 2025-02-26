@@ -1,14 +1,14 @@
-import 'package:kstructure/src/provider/login-provider.dart';
-import 'package:kstructure/src/utils/app_const.dart';
-import 'package:kstructure/src/utils/routes/route-names.dart';
-import 'package:kstructure/src/widgets/app_button.dart';
-import 'package:kstructure/src/widgets/app_input_text.dart';
-import 'package:kstructure/src/widgets/socialMedia.dart';
+import 'package:erp/src/provider/login-provider.dart';
+import 'package:erp/src/utils/app_const.dart';
+import 'package:erp/src/utils/routes/route-names.dart';
+import 'package:erp/src/widgets/app_button.dart';
+import 'package:erp/src/widgets/app_input_text.dart';
+import 'package:erp/src/widgets/socialMedia.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:kstructure/src/gateway/login-services.dart';
-import 'package:kstructure/src/widgets/app_base_screen.dart';
-import 'package:kstructure/src/widgets/app_text.dart';
+import 'package:erp/src/gateway/login-services.dart';
+import 'package:erp/src/widgets/app_base_screen.dart';
+import 'package:erp/src/widgets/app_text.dart';
 import 'package:provider/provider.dart';
 
 class Login extends StatefulWidget {

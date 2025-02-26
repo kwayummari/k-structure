@@ -1,16 +1,17 @@
-import 'package:kstructure/src/screens/introduction/intro.dart';
-import 'package:kstructure/src/screens/models/bottomNavigationBar/bottomNavigationBar.dart';
-import 'package:kstructure/src/screens/models/contents/contents_by_category.dart';
-import 'package:kstructure/src/screens/models/contents/contents_by_id.dart';
-import 'package:kstructure/src/screens/models/dashboard/dashboard.dart';
-import 'package:kstructure/src/screens/models/payment/payment.dart';
-import 'package:kstructure/src/screens/models/profile/profile.dart';
-import 'package:kstructure/src/utils/routes/route-names.dart';
+ 
+import 'package:erp/src/screens/authentication/login.dart';
+import 'package:erp/src/screens/authentication/registration.dart';
+import 'package:erp/src/screens/introduction/intro.dart';
+import 'package:erp/src/screens/models/bottomNavigationBar/bottomNavigationBar.dart';
+import 'package:erp/src/screens/models/contents/contents_by_category.dart';
+import 'package:erp/src/screens/models/contents/contents_by_id.dart';
+import 'package:erp/src/screens/models/dashboard/dashboard.dart';
+import 'package:erp/src/screens/models/payment/payment.dart';
+import 'package:erp/src/screens/models/profile/profile.dart';
+import 'package:erp/src/screens/splash/splash.dart';
+import 'package:erp/src/utils/routes/route-names.dart';
+import 'package:erp/src/widgets/app_play_video.dart';
 import 'package:flutter/material.dart';
-import 'package:kstructure/src/screens/authentication/login.dart';
-import 'package:kstructure/src/screens/authentication/registration.dart';
-import 'package:kstructure/src/screens/splash/splash.dart';
-import 'package:kstructure/src/widgets/app_play_video.dart';
 
 final Map<String, WidgetBuilder> routes = {
   RouteNames.login: (context) => Login(),
